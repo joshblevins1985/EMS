@@ -1,0 +1,1 @@
+<textarea class="ckeditor" id="editor1" name="comment" rows="20"></textarea>

@@ -1,0 +1,33 @@
+<form action="/assetSupportRequest" method="post">
+    
+    @csrf
+    <input type="hidden" name="assetId" value="{{ $asset->id }}">
+   
+    
+    
+    <!-- begin panel -->
+	<div class="panel panel-inverse">
+		<div class="panel-heading">
+			<h4 class="panel-title">Description of problem.</h4>
+			
+		</div>
+		<div class="panel-body">
+				<textarea class="textarea form-control" id="wysihtml5" name="description" placeholder="Enter a description of the problem you are experiencing." rows="12"></textarea>
+		</div>
+	</div>
+	<!-- end panel -->
+
+	<div class="form-group">
+        <label for="location">Reported By</label>
+        <select class="default-employee form-control" name="reportedBy">
+            @foreach($employees as $employee)
+			<option value="{{$employee->user_id}}" @if(auth()->user()->id == $employee->user_id) selected @endif >{{ $employee->last_name }} {{ $employee->first_name }} </option>
+			@endforeach
+		</select>
+    </div>
+    
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Submit New Support Request</button>
+    </div>
+    
+</form>
