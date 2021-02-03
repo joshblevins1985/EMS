@@ -697,6 +697,21 @@ Route::get('dispatch/status/{id}/{status}/{iid}', [
     'middleware' => ['permission:dispatch.status']
 ]);
 
+//DB Check //
+
+Route::get('/dbcheck', function(){
+    // Test database connection
+    try {
+        DB::connection('sqlsrv')->getPdo();
+        if(DB::connection()->getDatabaseName()){
+            echo "Yes! Successfully connected to the DB: " . DB::connection()->getDatabaseName();
+        }else{
+            die("Could not find the database. Please check your configuration.");
+        }
+    } catch (\Exception $e) {
+        die("Could not connect to the database.  Please check your configuration. error:" . $e );
+    }
+});
 
 //Bucyrus//
 Route::get('buc/list', [
