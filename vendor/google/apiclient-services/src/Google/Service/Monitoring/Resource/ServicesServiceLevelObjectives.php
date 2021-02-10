@@ -84,8 +84,10 @@ class Google_Service_Monitoring_Resource_ServicesServiceLevelObjectives extends 
    * List the ServiceLevelObjectives for the given Service.
    * (serviceLevelObjectives.listServicesServiceLevelObjectives)
    *
-   * @param string $parent Required. Resource name of the parent Service. The
-   * format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
+   * @param string $parent Required. Resource name of the parent containing the
+   * listed SLOs, either a project or a Monitoring Workspace. The formats are:
+   * projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
+   * workspaces/[HOST_PROJECT_ID_OR_NUMBER]/services/-
    * @param array $optParams Optional parameters.
    *
    * @opt_param string pageToken If this field is not empty then it must contain

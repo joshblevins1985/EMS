@@ -1325,6 +1325,18 @@ Route::post('enrolled/group', 'EnrolledStudentController@group')->name('enrolled
 Route::get('qa/createreport', 'QaQiController@createreport')->name('qa.createreport');
 Route::get('qa/report', 'QaQiController@report')->name('qa.report');
 Route::get('/qa/report/pdf/{start}/{end}','QaQiController@reportpdf');
+Route::get('/brsupdate', function(){
+   $brs = Vanguard\BadRunSheet::where('status', '<', 5)->get();
+
+   foreach($brs as $row){
+       $emp = Vanguard\BadRunSheetEmployee::where('bad_run_sheet_id' , $row->id)->first();
+
+       $row->station = $emp->employee->primary_station;
+       $row->save();
+   }
+
+});
+Route::get('/qa/reportmgr/pdf/{start}/{end}','QaQiController@reportmgrpdf');
 Route::get('/scholarship/report/pdf/{id}','ScholarshipController@scholarship_pdf');
 Route::post('/scholarship/addNewCourse','ScholarshipController@addNewCourse');
 Route::get('/scholarship/studentInfo/pdf/{id}','ScholarshipController@studentInfo');

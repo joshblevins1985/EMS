@@ -1,7 +1,7 @@
 
 @if(isset ($errors) && count($errors) > 0)
     @foreach($errors->all() as $error)
-    <script> toastr["error"]("<?php echo $error ?>") </script>
+    <script> toastr["success"]("<?php echo $error ?>") </script>
     @endforeach
 @endif
 

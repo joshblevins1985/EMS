@@ -1,6 +1,7 @@
 <?php
 
 namespace Vanguard\Http\Controllers\Web;
+use Vanguard\BadRunSheet;
 use Vanguard\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -11,6 +12,7 @@ use Vanguard\AttendanceOccurance;
 use Vanguard\Protocols;
 use Vanguard\QaQi;
 use Vanguard\EmployeeEncounters;
+use Vanguard\Station;
 use Vanguard\User;
 use Vanguard\QaDefficiencies;
 
@@ -533,6 +535,42 @@ class QaQiController extends Controller
             
         // return view('education.qareport');
 
+
+    }
+
+    public function reportmgrpdf($start, $end)
+    {
+        $regionals = Station::where('status', 0)->groupBy('regional_manager')->orderby('regional_manager')->get();
+        $managers = Station:: whereNotIn('manager', [804, 986, 450, 942, 549])->where('status', 0)->groupBy('manager')->get();
+
+        $concerns = QaQi::whereBetween('created_at', [$start, $end])->where('percent', '<', 80)->groupBy('employee_id')
+            ->select('*',  DB::raw('count(*) as count'))
+            ->selectRaw('count(case when percent >= 70 and percent <= 79 then 1 end) as step1')
+            ->selectRaw('count(case when percent >= 60 and percent <= 69 then 1 end) as step2')
+            ->selectRaw('count(case when percent >= 50 and percent <= 59 then 1 end) as step3')
+            ->selectRaw('count(case when percent <= 49  then 1 end) as step4')
+            ->get();
+
+        $brs = Station::where('status', 0)->orderBy('station_id')->get();
+
+        view()->share('start',$start);
+        view()->share('end' ,$end);
+        view()->share('regionals', $regionals);
+        view()->share('managers', $managers);
+        view()->share('concerns', $concerns);
+        view()->share('brs', $brs);
+
+        // pass view file
+
+       // $pdf = PDF::loadView('education.qamgrreportpdf');
+        // download pdf
+        //return $pdf->download('qamgrreport.pdf');
+
+         return view('education.qamgrreportpdf');
+
+        $qas = Employee::with(['qa' => function ($query) use ($start, $end){ $query->whereBetween('created_at', [$start, $end]); }], 'qa.deficiencies')->whereHas('qa', function ($query) use ($start, $end) {
+            $query->whereBetween('created_at', [$start, $end]);
+        })->get();
 
     }
     

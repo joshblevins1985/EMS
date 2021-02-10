@@ -52,7 +52,7 @@ class Google_Service_CloudAsset_Resource_V1 extends Google_Service_Resource
    * of the asset name list is 100 in one request.
    * @opt_param string contentType Optional. The content type.
    * @opt_param string readTimeWindow.endTime End time of the time window
-   * (inclusive). Current timestamp if not specified.
+   * (inclusive). If not specified, the current timestamp is used instead.
    * @return Google_Service_CloudAsset_BatchGetAssetsHistoryResponse
    */
   public function batchGetAssetsHistory($parent, $optParams = array())

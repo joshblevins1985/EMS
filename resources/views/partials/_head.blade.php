@@ -35,6 +35,7 @@
 <script src="https://kit.fontawesome.com/22694c7a2d.js" crossorigin="anonymous"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js" integrity="sha256-3blsJd4Hli/7wCQ+bmgXfOdK7p/ZUMtPXY08jmxSSgk=" crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 
     <script>
     toastr.options.closeButton =  {
@@ -45,7 +46,7 @@
         "positionClass": "toast-top-right",
         "preventDuplicates": false,
         "onclick": null,
-        "showDuration": "300",
+        "showDuration": "3000",
         "hideDuration": "1000",
         "timeOut": "5000",
         "extendedTimeOut": "1000",

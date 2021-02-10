@@ -1,112 +1,0 @@
-[2021-01-21 05:00:26] production.ERROR: The exit status code '1' says something went wrong:
-stderr: "Loading pages (1/6)
-[>                                                           ] 0%[======>                                                     ] 10%QSslSocket: cannot resolve CRYPTO_num_locks
-QSslSocket: cannot resolve CRYPTO_set_id_callback
-QSslSocket: cannot resolve CRYPTO_set_locking_callback
-QSslSocket: cannot resolve sk_free
-QSslSocket: cannot resolve sk_num
-QSslSocket: cannot resolve sk_pop_free
-QSslSocket: cannot resolve sk_value
-QSslSocket: cannot resolve SSL_library_init
-QSslSocket: cannot resolve SSL_load_error_strings
-QSslSocket: cannot resolve SSLv3_client_method
-QSslSocket: cannot resolve SSLv23_client_method
-QSslSocket: cannot resolve SSLv3_server_method
-QSslSocket: cannot resolve SSLv23_server_method
-QSslSocket: cannot resolve X509_STORE_CTX_get_chain
-QSslSocket: cannot resolve OPENSSL_add_all_algorithms_noconf
-QSslSocket: cannot resolve OPENSSL_add_all_algorithms_conf
-QSslSocket: cannot resolve SSLeay
-QSslSocket: cannot call unresolved function CRYPTO_num_locks
-QSslSocket: cannot call unresolved function CRYPTO_set_id_callback
-QSslSocket: cannot call unresolved function CRYPTO_set_locking_callback
-QSslSocket: cannot call unresolved function SSL_library_init
-QSslSocket: cannot call unresolved function SSLv23_client_method
-QSslSocket: cannot call unresolved function sk_num
-QSslSocket: cannot call unresolved function SSLv23_client_method
-QSslSocket: cannot call unresolved function SSL_library_init
-[======================>                                     ] 38%QSslSocket: cannot call unresolved function SSLv23_client_method
-QSslSocket: cannot call unresolved function SSL_library_init
-Warning: Failed to load https://pro.fontawesome.com/releases/v5.12.1/css/all.css (ignore)
-[============================================================] 100%Counting pages (2/6)                                               
-[============================================================] Object 1 of 1Resolving links (4/6)                                                       
-[============================================================] Object 1 of 1Loading headers and footers (5/6)                                           
-Printing pages (6/6)
-[>                                                           ] Preparing[===============>                                            ] Page 1 of 4[==============================>                             ] Page 2 of 4[=============================================>              ] Page 3 of 4[============================================================] Page 4 of 4Done                                                                      
-Exit with code 1 due to network error: UnknownNetworkError
-QSslSocket: cannot call unresolved function CRYPTO_num_locks
-QSslSocket: cannot call unresolved function CRYPTO_set_id_callback
-QSslSocket: cannot call unresolved function CRYPTO_set_locking_callback
-"
-stdout: ""
-command: /home/380149.cloudwaysapps.com/cttrramumg/public_html//vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64 --lowquality --page-size 'a4' '/tmp/knp_snappy600950b9bb5b67.08026792.html' '/tmp/knp_snappy600950b9bb65e7.48596083.pdf'. {"exception":"[object] (RuntimeException(code: 1): The exit status code '1' says something went wrong:
-stderr: \"Loading pages (1/6)
-[>                                                           ] 0%[======>                                                     ] 10%QSslSocket: cannot resolve CRYPTO_num_locks
-QSslSocket: cannot resolve CRYPTO_set_id_callback
-QSslSocket: cannot resolve CRYPTO_set_locking_callback
-QSslSocket: cannot resolve sk_free
-QSslSocket: cannot resolve sk_num
-QSslSocket: cannot resolve sk_pop_free
-QSslSocket: cannot resolve sk_value
-QSslSocket: cannot resolve SSL_library_init
-QSslSocket: cannot resolve SSL_load_error_strings
-QSslSocket: cannot resolve SSLv3_client_method
-QSslSocket: cannot resolve SSLv23_client_method
-QSslSocket: cannot resolve SSLv3_server_method
-QSslSocket: cannot resolve SSLv23_server_method
-QSslSocket: cannot resolve X509_STORE_CTX_get_chain
-QSslSocket: cannot resolve OPENSSL_add_all_algorithms_noconf
-QSslSocket: cannot resolve OPENSSL_add_all_algorithms_conf
-QSslSocket: cannot resolve SSLeay
-QSslSocket: cannot call unresolved function CRYPTO_num_locks
-QSslSocket: cannot call unresolved function CRYPTO_set_id_callback
-QSslSocket: cannot call unresolved function CRYPTO_set_locking_callback
-QSslSocket: cannot call unresolved function SSL_library_init
-QSslSocket: cannot call unresolved function SSLv23_client_method
-QSslSocket: cannot call unresolved function sk_num
-QSslSocket: cannot call unresolved function SSLv23_client_method
-QSslSocket: cannot call unresolved function SSL_library_init
-[======================>                                     ] 38%QSslSocket: cannot call unresolved function SSLv23_client_method
-QSslSocket: cannot call unresolved function SSL_library_init
-Warning: Failed to load https://pro.fontawesome.com/releases/v5.12.1/css/all.css (ignore)
-[============================================================] 100%Counting pages (2/6)                                               
-[============================================================] Object 1 of 1Resolving links (4/6)                                                       
-[============================================================] Object 1 of 1Loading headers and footers (5/6)                                           
-Printing pages (6/6)
-[>                                                           ] Preparing[===============>                                            ] Page 1 of 4[==============================>                             ] Page 2 of 4[=============================================>              ] Page 3 of 4[============================================================] Page 4 of 4Done                                                                      
-Exit with code 1 due to network error: UnknownNetworkError
-QSslSocket: cannot call unresolved function CRYPTO_num_locks
-QSslSocket: cannot call unresolved function CRYPTO_set_id_callback
-QSslSocket: cannot call unresolved function CRYPTO_set_locking_callback
-\"
-stdout: \"\"
-command: /home/380149.cloudwaysapps.com/cttrramumg/public_html//vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64 --lowquality --page-size 'a4' '/tmp/knp_snappy600950b9bb5b67.08026792.html' '/tmp/knp_snappy600950b9bb65e7.48596083.pdf'. at /home/380149.cloudwaysapps.com/cttrramumg/public_html/vendor/knplabs/knp-snappy/src/Knp/Snappy/AbstractGenerator.php:381)
-[stacktrace]
-#0 /home/380149.cloudwaysapps.com/cttrramumg/public_html/vendor/knplabs/knp-snappy/src/Knp/Snappy/AbstractGenerator.php(178): Knp\\Snappy\\AbstractGenerator->checkProcessStatus(1, '', 'Loading pages (...', '/home/380149.cl...')
-#1 /home/380149.cloudwaysapps.com/cttrramumg/public_html/vendor/knplabs/knp-snappy/src/Knp/Snappy/Pdf.php(63): Knp\\Snappy\\AbstractGenerator->generate(Array, '/tmp/knp_snappy...', Array, false)
-#2 /home/380149.cloudwaysapps.com/cttrramumg/public_html/vendor/knplabs/knp-snappy/src/Knp/Snappy/AbstractGenerator.php(222): Knp\\Snappy\\Pdf->generate(Array, '/tmp/knp_snappy...', Array)
-#3 /home/380149.cloudwaysapps.com/cttrramumg/public_html/vendor/knplabs/knp-snappy/src/Knp/Snappy/AbstractGenerator.php(243): Knp\\Snappy\\AbstractGenerator->getOutput(Array, Array)
-#4 /home/380149.cloudwaysapps.com/cttrramumg/public_html/vendor/barryvdh/laravel-snappy/src/PdfWrapper.php(176): Knp\\Snappy\\AbstractGenerator->getOutputFromHtml('<html>\
-<head>\
-\\t...', Array)
-#5 /home/380149.cloudwaysapps.com/cttrramumg/public_html/app/Console/Commands/VehicleMileage.php(107): Barryvdh\\Snappy\\PdfWrapper->output()
-#6 [internal function]: Vanguard\\Console\\Commands\\VehicleMileage->Vanguard\\Console\\Commands\\{closure}(Object(Illuminate\\Mail\\Message))
-#7 /home/380149.cloudwaysapps.com/cttrramumg/public_html/vendor/laravel/framework/src/Illuminate/Mail/Mailer.php(231): call_user_func(Object(Closure), Object(Illuminate\\Mail\\Message))
-#8 /home/380149.cloudwaysapps.com/cttrramumg/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(223): Illuminate\\Mail\\Mailer->send('emails.units.da...', Array, Object(Closure))
-#9 /home/380149.cloudwaysapps.com/cttrramumg/public_html/app/Console/Commands/VehicleMileage.php(108): Illuminate\\Support\\Facades\\Facade::__callStatic('send', Array)
-#10 [internal function]: Vanguard\\Console\\Commands\\VehicleMileage->handle()
-#11 /home/380149.cloudwaysapps.com/cttrramumg/public_html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
-#12 /home/380149.cloudwaysapps.com/cttrramumg/public_html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
-#13 /home/380149.cloudwaysapps.com/cttrramumg/public_html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
-#14 /home/380149.cloudwaysapps.com/cttrramumg/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(564): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
-#15 /home/380149.cloudwaysapps.com/cttrramumg/public_html/vendor/laravel/framework/src/Illuminate/Console/Command.php(179): Illuminate\\Container\\Container->call(Array)
-#16 /home/380149.cloudwaysapps.com/cttrramumg/public_html/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
-#17 /home/380149.cloudwaysapps.com/cttrramumg/public_html/vendor/laravel/framework/src/Illuminate/Console/Command.php(166): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
-#18 /home/380149.cloudwaysapps.com/cttrramumg/public_html/vendor/symfony/console/Application.php(1001): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
-#19 /home/380149.cloudwaysapps.com/cttrramumg/public_html/vendor/symfony/console/Application.php(271): Symfony\\Component\\Console\\Application->doRunCommand(Object(Vanguard\\Console\\Commands\\VehicleMileage), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
-#20 /home/380149.cloudwaysapps.com/cttrramumg/public_html/vendor/symfony/console/Application.php(147): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
-#21 /home/380149.cloudwaysapps.com/cttrramumg/public_html/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
-#22 /home/380149.cloudwaysapps.com/cttrramumg/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
-#23 /home/380149.cloudwaysapps.com/cttrramumg/public_html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
-#24 {main}
-"} 

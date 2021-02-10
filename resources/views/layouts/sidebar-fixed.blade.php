@@ -43,5 +43,6 @@
       });
     </script>
     @include('partials.partials._pagejs')
+
   </body>
 </html>

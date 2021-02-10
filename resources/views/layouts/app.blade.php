@@ -157,7 +157,7 @@
     <!-- Social icons -->
     <div class="pb-4">
         <a href="https://www.facebook.com/mdbootstrap" target="_blank">
-            © 2018 Copyright Medidex Soulutions
+            © 2020 Copyright Medidex Soulutions
         </a>
 
 
@@ -226,8 +226,6 @@
         format: 'mm/dd/yyyy',
         formatSubmit: 'yyyy-mm-dd',
         hiddenName: 'intime',
-
-
     })
 </script>
 

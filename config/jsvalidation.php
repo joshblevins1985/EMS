@@ -5,7 +5,7 @@ return array(
     /*
      * Default view used to render Javascript validation code
      */
-    'view' => 'jsvalidation::bootstrap',
+    'view' => 'jsvalidation::bootstrap4',
 
     /*
      * Default JQuery selector find the form to be validated.

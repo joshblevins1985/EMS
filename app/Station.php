@@ -25,4 +25,9 @@ class Station extends Model
     {
         return $this->hasOne(Employee::class, 'user_id', 'manager');
     }
+
+    public function brs()
+    {
+        return $this->hasMany(BadRunSheet::class, 'station')->where('status', '<', 5);
+    }
 }

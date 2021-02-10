@@ -441,7 +441,7 @@ class Google_Service_CloudHealthcare_Resource_ProjectsLocationsDatasetsFhirStore
    *
    * Implements the FHIR standard patch interaction
    * ([STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#patch),
-   * [R4](http://hl7.org/implement/standards/fhir/R4/http.html#patch)]).
+   * [R4](http://hl7.org/implement/standards/fhir/R4/http.html#patch)).
    *
    * DSTU2 doesn't define a patch method, but the server supports it in the same
    * way it supports STU3.

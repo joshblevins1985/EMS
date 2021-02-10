@@ -519,6 +519,14 @@ class Google_Service_Classroom extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                'userId' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'late' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -531,14 +539,6 @@ class Google_Service_Classroom extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                   'repeated' => true,
-                ),
-                'userId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'late' => array(
-                  'location' => 'query',
-                  'type' => 'string',
                 ),
               ),
             ),'modifyAttachments' => array(
