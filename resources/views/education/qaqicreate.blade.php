@@ -1,4 +1,4 @@
-@extends('layouts.sidebar-fixed')
+@extends('layouts.clean')
 
 @section('page-title', trans('app.dashboard'))
 @section('page-heading', trans('app.dashboard'))
@@ -19,12 +19,14 @@
 @include('education.partials.qaform')
                     </form>
 
-   
+
 @stop
 
 @push('styles')
     <link rel="stylesheet" href="/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" ></link>
     <link rel="stylesheet" href="/assets/plugins/ckeditor/custom.css" type="text/css">
+    <style>
+    </style>
 @endpush
 
 @push('scripts')

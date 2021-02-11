@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.sidebar-fixed')
 
 @section('title', 'Calendar')
 
@@ -27,7 +27,56 @@
     </h1>
     <!-- end page-header -->
     <hr/>
+    <div class="row">
+        <div class="col-xl-4 col-md-6">
+            <div class="widget widget-stats bg-blue">
+                <div class="row">
+                    <div class="stats-icon"><i class="fa fa-desktop"></i></div>
+                    <div class="stats-info">
+                        <h4>TOTAL CALLS TO MAKE</h4>
+                        <p>{{ count($qa) }}</p>
+                    </div>
+                </div>
 
+
+                <div class="stats-link">
+                    <a href="javascript:;">View Detail <i class="fa fa-arrow-alt-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-md-6">
+            <div class="widget widget-stats bg-blue">
+                <div class="row">
+                    <div class="stats-icon"><i class="fa fa-desktop"></i></div>
+                    <div class="stats-info">
+                        <h4>TOTAL CALLS TO MAKE</h4>
+                        <p>{{ count($qa) }}</p>
+                    </div>
+                </div>
+
+
+                <div class="stats-link">
+                    <a href="javascript:;">View Detail <i class="fa fa-arrow-alt-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-md-6">
+            <div class="widget widget-stats bg-blue">
+                <div class="row">
+                    <div class="stats-icon"><i class="fa fa-desktop"></i></div>
+                    <div class="stats-info">
+                        <h4>TOTAL CALLS TO MAKE</h4>
+                        <p>{{ count($qa) }}</p>
+                    </div>
+                </div>
+
+
+                <div class="stats-link">
+                    <a href="javascript:;">View Detail <i class="fa fa-arrow-alt-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row mb-3">
         <button type="button" class="btn btn-warning mr-3" data-toggle="modal" data-target="#basicExampleModal2">Add New CPR Class
         </button>
@@ -50,24 +99,7 @@
                 <!-- end vertical-box -->
 
             </div>
-            <div class="row">
-                <div class="col-xl-4 col-md-6">
-        			<div class="widget widget-stats bg-blue">
-        			    <div class="row">
-        			       <div class="stats-icon"><i class="fa fa-desktop"></i></div>
-            				<div class="stats-info">
-            					<h4>TOTAL CALLS TO MAKE</h4>
-            					<p>{{ count($qa) }}</p>
-            				</div>
-        			    </div>
 
-
-        				<div class="stats-link">
-        					<a href="javascript:;">View Detail <i class="fa fa-arrow-alt-circle-right"></i></a>
-        				</div>
-        			</div>
-        		</div>
-            </div>
 
         </div>
         <div class="col-xl-4">

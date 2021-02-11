@@ -98,7 +98,7 @@ class QaQiController extends Controller
         
         
         $this->validate(request(),[
-            'date_submit' => 'required',
+            'date' => 'required',
             'employee_id'=> 'required',
             'location' => 'required',
             'grade' => 'required',
@@ -116,7 +116,7 @@ class QaQiController extends Controller
 
         $qa = new QaQi;
 
-        $qa->date = $request->date_submit;
+        $qa->date = $request->date;
         $qa->employee_id = $request->employee_id;
         $qa->location = $request->location;
         $qa->protocol = $request->protocol;
@@ -268,7 +268,7 @@ class QaQiController extends Controller
             
             $encounter = new EmployeeEncounters;
 
-                $encounter->doi = $request->date_submit;
+                $encounter->doi = $request->date;
                 $encounter->user_id = $request->employee_id;
                 $encounter->encounter_type = 1;
                 $encounter->department =  2;
@@ -291,7 +291,7 @@ class QaQiController extends Controller
         }elseif($request->eresponse == 2){
             $encounter = new EmployeeEncounters;
 
-            $encounter->doi = $request->date_submit;
+            $encounter->doi = $request->date;
             $encounter->user_id = $request->employee_id;
             $encounter->encounter_type = 1;
             $encounter->department =  2;
@@ -414,7 +414,7 @@ class QaQiController extends Controller
         
         $qa = QaQi::find($id);
 
-        $qa->date = $request->date_submit;
+        $qa->date = $request->date;
         $qa->employee_id = $request->employee_id;
         $qa->location = $request->location;
         $qa->protocol = $request->protocol;

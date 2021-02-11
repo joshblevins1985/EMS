@@ -180,6 +180,31 @@ class EducationController extends Controller
                 
             }
         }
+
+        $qacount = [];
+
+        $qa = QaQi::select('created_at')->where('created_at', '>=', Carbon::today()->startOfMonth())->get()
+        ->groupBy(function($date){
+            return Carbon::parse($date->created_at)->format('m');
+        });
+
+
+        if($qa->count()) {
+            foreach ($qa as $key => $value) {
+                //dd($value->start);
+                $start = new \DateTime($value->created_at);
+                $end = new \DateTime($value->created_at);
+                $qa[] = [
+                    'title' => 'QA/QI Completed '. count($value),
+                    'start' => $start->format('c'),
+                    'end' => $end->format('c'),
+                    'color' => '#FF338D',
+
+                ];
+
+
+            }
+        }
         
         
         $todo = ToDo::where('assigned_to', auth()->user()->id)->whereNull('completed')->get();
