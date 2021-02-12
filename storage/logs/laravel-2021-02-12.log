@@ -88,3 +88,4 @@ command: /Users/joshuablevins/github/peasi//vendor/h4cc/wkhtmltopdf-amd64/bin/wk
 #76 /Users/joshuablevins/github/peasi/server.php(21): require_once('/Users/joshuabl...')
 #77 {main}
 "} 
+[2021-02-12 14:19:15] production.INFO: Line 226  

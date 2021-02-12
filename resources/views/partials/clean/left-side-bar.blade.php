@@ -117,7 +117,7 @@
             <div class="icon-w">
                 <div class="os-icon os-icon-file-text"></div>
             </div>
-            <span>Compliacne</span></a>
+            <span>Compliance</span></a>
         <div class="sub-menu-w">
             <div class="sub-menu-header">
                 Compliance
