@@ -41,7 +41,7 @@
                     <div  id="collapse{{ $section->id }}" class="collapse @if ($loop->first) show @endif" aria-labelledby="heading{{ $section->id }}" data-parent="#accordionExample">
                         <div class="col-xl-12">
                             <div class="list-wrapper">
-                                <ul class="text-white">
+                                <ul >
                                     @foreach($section->topics as $topic)
                                         @include('classroom.partials.classWorkSectionTopics')
                                     @endforeach

@@ -1,4 +1,4 @@
-@extends('layouts.sidebar-fixed')
+@extends('layouts.clean')
 
 @section('title', 'Managed Tables - Buttons')
 

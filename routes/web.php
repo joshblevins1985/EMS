@@ -921,7 +921,7 @@ Route::get('classroom/addQuestion/{qid}/{cid}', function ($qid, $cid) {
             $instructor = false;
         }
 
-    return view('classroom.addQuestion', compact( 'questions', 'instructor', 'cid', 'qid'));
+    return view('classroom.addQuestion', compact(  'instructor', 'cid', 'qid'));
 })->middleware('auth');
 Route::get('classroom/addAnswer/{qid}/{quiz}', function ($qid, $quiz) {
 

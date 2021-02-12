@@ -9,7 +9,7 @@
 .headingContainer {
   position: relative;
   text-align: center;
-  color: white;
+
 }
 
 
@@ -48,32 +48,32 @@
 
             <div class="row">
                 <div class="col-xl-12">
-                    <ul class="nav md-pills nav-justified pills-blue white-text" id="pills-tab" role="tablist">
+                    <ul class="nav md-pills nav-justified pills-blue " id="pills-tab" role="tablist">
 
-                    <li class="nav-item white-text">
-                        <a class="nav-link white-text active" id="pills-ClassRoom-tab" data-toggle="pill"
+                    <li class="nav-item ">
+                        <a class="nav-link  active" id="pills-ClassRoom-tab" data-toggle="pill"
                            href="#pills-ClassRoom" role="tab" aria-controls="pills-ClassRoom" aria-selected="true">Class Room</a>
                     </li>
 
-                    <li class="nav-item white-text">
-                        <a class="nav-link white-text" id="pills-Stream-tab" data-toggle="pill"  href="#pills-Stream"
+                    <li class="nav-item ">
+                        <a class="nav-link " id="pills-Stream-tab" data-toggle="pill"  href="#pills-Stream"
                            role="tab" aria-controls="pills-Stream" aria-selected="false">Stream</a>
                     </li>
 
-                    <li class="nav-item white-text">
-                        <a class="nav-link white-text" id="pills-People-tab" data-toggle="pill"  href="#pills-People"
+                    <li class="nav-item ">
+                        <a class="nav-link " id="pills-People-tab" data-toggle="pill"  href="#pills-People"
                            role="tab" aria-controls="pills-People" aria-selected="false">People</a>
                     </li>
 
                     @if($instructor)
-                    <li class="nav-item white-text">
-                        <a class="nav-link white-text" id="pills-Grades-tab" data-toggle="pill"  href="#pills-Documents"
+                    <li class="nav-item ">
+                        <a class="nav-link" id="pills-Grades-tab" data-toggle="pill"  href="#pills-Documents"
                            role="tab" aria-controls="pills-Documents" aria-selected="false">Documents</a>
                     </li>
                     @endif
 
-                    <li class="nav-item white-text">
-                        <a class="nav-link white-text" id="pills-Grades-tab" data-toggle="pill"  href="#pills-Grades"
+                    <li class="nav-item ">
+                        <a class="nav-link " id="pills-Grades-tab" data-toggle="pill"  href="#pills-Grades"
                            role="tab" aria-controls="pills-Grades" aria-selected="false">Grades</a>
                     </li>
 
