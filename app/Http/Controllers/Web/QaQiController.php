@@ -1,6 +1,7 @@
 <?php
 
 namespace Vanguard\Http\Controllers\Web;
+use Carbon\Carbon;
 use Vanguard\BadRunSheet;
 use Vanguard\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -105,6 +106,8 @@ class QaQiController extends Controller
             'comments' => 'required',
 
         ]);
+
+       $date = Carbon::parse($request->date);
         
         $percent = $request->q1 + $request->q2 + $request->q3 + $request->q4 + $request->q5 + $request->q6 + $request->q7 + $request->q8 + $request->q9 + $request->q10;
         
@@ -116,8 +119,9 @@ class QaQiController extends Controller
 
         $qa = new QaQi;
 
-        $qa->date = $request->date;
+        $qa->date = $date;
         $qa->employee_id = $request->employee_id;
+        $qa->run_id = $request->run_id;
         $qa->location = $request->location;
         $qa->protocol = $request->protocol;
         $qa->grade = $request->grade;
@@ -268,7 +272,7 @@ class QaQiController extends Controller
             
             $encounter = new EmployeeEncounters;
 
-                $encounter->doi = $request->date;
+                $encounter->doi = $date;
                 $encounter->user_id = $request->employee_id;
                 $encounter->encounter_type = 1;
                 $encounter->department =  2;
@@ -291,7 +295,7 @@ class QaQiController extends Controller
         }elseif($request->eresponse == 2){
             $encounter = new EmployeeEncounters;
 
-            $encounter->doi = $request->date;
+            $encounter->doi = $date;
             $encounter->user_id = $request->employee_id;
             $encounter->encounter_type = 1;
             $encounter->department =  2;
@@ -406,6 +410,7 @@ class QaQiController extends Controller
      */
     public function update(Request $request, $id)
     {
+       $date = Carbon::parse($request->date);
         $percent = $request->q1 + $request->q2 + $request->q3 + $request->q4 + $request->q5 + $request->q6 + $request->q7 + $request->q8 + $request->q9 + $request->q10;
         
         $percent = $percent / 150;
@@ -414,7 +419,7 @@ class QaQiController extends Controller
         
         $qa = QaQi::find($id);
 
-        $qa->date = $request->date;
+        $qa->date = $date;
         $qa->employee_id = $request->employee_id;
         $qa->location = $request->location;
         $qa->protocol = $request->protocol;

@@ -28,6 +28,13 @@
 
         </div>
 
+        <div class="md-form">
+            <label >Pick Up Location</label>
+            <input type="text" id="run_id" name="run_id"
+                   value="@if($edit){{$qa->run_id}} @else{{old('run_id')}}@endif" class="form-control"
+                   placeholder='Enter Run ID.'>
+
+        </div>
 
         <div class="md-form">
             <label >Pick Up Location</label>

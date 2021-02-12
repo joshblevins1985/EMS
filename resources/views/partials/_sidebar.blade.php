@@ -252,10 +252,10 @@
     <li class="nav-item menu-items">
       <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
         <span class="menu-icon">
-          <i class="fa fa-users-o"></i>
+          <i class="fas fa-fingerprint"></i>
         </span>
         <span class="menu-title">Human Resources</span>
-        <i class="menu-arrow"></i>
+        <i class="fas fa-fingerprint"></i>
       </a>
       <div class="collapse" id="charts">
         <ul class="nav flex-column sub-menu">

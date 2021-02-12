@@ -185,21 +185,21 @@
                 START - Mobile Menu List
                 -------------------->
                 <ul class="main-menu">
-                    @include('partials.clean.mobile-left-side-bar')
+                @include('partials.clean.mobile-left-side-bar')
                 <!--------------------
                 END - Mobile Menu List
                 -------------------->
-                <div class="mobile-menu-magic">
-                    <h4>
-                        Light Admin
-                    </h4>
-                    <p>
-                        Clean Bootstrap 4 Template
-                    </p>
-                    <div class="btn-w">
-                        <a class="btn btn-white btn-rounded" href="https://themeforest.net/item/light-admin-clean-bootstrap-dashboard-html-template/19760124?ref=Osetin" target="_blank">Purchase Now</a>
+                    <div class="mobile-menu-magic">
+                        <h4>
+                            Light Admin
+                        </h4>
+                        <p>
+                            Clean Bootstrap 4 Template
+                        </p>
+                        <div class="btn-w">
+                            <a class="btn btn-white btn-rounded" href="https://themeforest.net/item/light-admin-clean-bootstrap-dashboard-html-template/19760124?ref=Osetin" target="_blank">Purchase Now</a>
+                        </div>
                     </div>
-                </div>
             </div>
         </div>
         <!--------------------
@@ -475,7 +475,7 @@
               START - Settings Link in secondary top menu
               -------------------->
                     <div class="top-icon top-settings os-dropdown-trigger os-dropdown-position-left">
-                       @include('partials.clean.settings-right')
+                        @include('partials.clean.settings-right')
                     </div>
                     <!--------------------
                     END - Settings Link in secondary top menu
@@ -541,7 +541,7 @@
                 <div class="content-box">
                 @yield('content')
 
-                    <!--------------------
+                <!--------------------
               START - Color Scheme Toggler
               -------------------->
                     <div class="floated-colors-btn second-floated-btn">
@@ -567,7 +567,7 @@
                 <!--------------------
                 START - Sidebar
                 -------------------->
-
+            @include('partials.clean.right-side-bar')
                 <!--------------------
                 END - Sidebar
                 -------------------->

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.clean-right')
 
 @section('page-title', trans('app.dashboard'))
 @section('page-heading', trans('app.dashboard'))
@@ -14,7 +14,7 @@
     @include('partials.toastr')
 
     <div class="row">
-        <div class="col-9">
+        <div class="col-12">
             <form class="form-inline" role="search" method="GET" action="#">
                 <select class="mdb-select" id="name" name="name" searchable="Search here..">
                     <option value="" disabled selected>Choose Employee</option>
@@ -25,25 +25,16 @@
 
                 <div class="md-form mb-4 mr-sm-2">
                     <input placeholder="Select date" type="text" id="date" name="date" class="form-control datepicker">
-                    <label for="date">Search by Date</label>
                 </div>
 
                 <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
             </form>
         </div>
 
-        <div class="col-lg-3 col-sm-12">
-            <div class="row">
-                <a href="{{ route('qaqi.create') }}">
-                    <button type="button" class="btn btn-outline-primary btn-rounded waves-effect">Add New QA/QI
-                        Review
-                    </button>
-                </a>
-            </div>
-        </div>
+
     </div>
     <div class="row">
-        <div class="col-lg-10 col-sm-12">
+        <div class="col-lg-12">
             <table class="table table">
                 <thead>
                 <tr>
@@ -120,40 +111,8 @@
 
 
 
-        <div class="col-lg-2 col-sm-12">
-            <!--Panel-->
-            <div class="card text-center">
-                <div class="card-header primary-color white-text">
-                    QA QI Menu
-                </div>
-                <div class="card-body">
-                    <ul class="nav flex-column">
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                               aria-haspopup="true" aria-expanded="false">Reports</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#" data-toggle="modal"
-                                   data-target="#basicExampleModal2">Report By Date</a>
-
-                            </div>
-                        </li>
-
-
-                    </ul>
-
-
-                </div>
-                <div class="card-footer text-muted primary-color white-text">
-                    <p class="mb-0"></p>
-                </div>
-            </div>
-            <!--/.Panel-->
-        </div>
     </div>
-
-
-
 
     <!-- Modal -->
     <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -287,11 +246,36 @@
 
 @stop
 
+@section('content-right')
+    <div class="element-wrapper">
+        <h6 class="element-header">
+            Quick Links
+        </h6>
+        <div class="element-box-tp">
+            <div class="el-buttons-list full-width">
+                <a class="btn btn-white btn-sm" href="/qaqi/create"><i class="os-icon os-icon-delivery-box-2"></i><span>Create New QA / QI</span></a>
+                <div class="dropdown">
+                    <button class="btn btn-secondary btn-block dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Reports
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#" data-toggle="modal"
+                           data-target="#basicExampleModal2">Report By Date</a>
+                        <a class="dropdown-item" href="/qa/createreport">Manager Report</a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+@stop
+
 @section('styles')
 
 @stop
 
-@section('scripts')
+@push('scripts')
     <script type="text/javascript">
         function add_row() {
             $rowno = $("#employee_table tr").length;
@@ -304,4 +288,4 @@
         }
     </script>
 
-@stop
+@endpush
