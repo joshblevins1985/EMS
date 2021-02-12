@@ -32,8 +32,8 @@
                 </div>
                 </a>
             </div>
-            <h6 class="text-muted font-weight-normal">Attendance</h6>
-            <h6 class="text-muted font-weight-normal">Click the icon to see report</h6>
+            <h6 class="font-weight-normal">Attendance</h6>
+            <h6 class="font-weight-normal">Click the icon to see report</h6>
         </div>
     </div>
 
