@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
     <link href="/assets/light/bower_components/select2/dist/css/select2.min.css" rel="stylesheet">
     <link href="/assets/light/bower_components/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link href="/assets/light/bower_components/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
     <link href="/assets/light/bower_components/dropzone/dist/dropzone.css" rel="stylesheet">
     <link href="/assets/light/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
     <link href="/assets/light/bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
@@ -272,9 +273,7 @@
                 -------------------->
                 <div class="messages-notifications os-dropdown-trigger os-dropdown-position-right">
                     <i class="os-icon os-icon-mail-14"></i>
-                    <div class="new-messages-count">
-                        12
-                    </div>
+
                     <div class="os-dropdown light message-list">
                         <ul>
                             <li>
@@ -284,59 +283,15 @@
                                     </div>
                                     <div class="message-content">
                                         <h6 class="message-from">
-                                            John Mayers
+                                            Messaging Application Coming Soon.
                                         </h6>
                                         <h6 class="message-title">
-                                            Account Update
+
                                         </h6>
                                     </div>
                                 </a>
                             </li>
-                            <li>
-                                <a href="#">
-                                    <div class="user-avatar-w">
-                                        <img alt="" src="img/avatar2.jpg">
-                                    </div>
-                                    <div class="message-content">
-                                        <h6 class="message-from">
-                                            Phil Jones
-                                        </h6>
-                                        <h6 class="message-title">
-                                            Secutiry Updates
-                                        </h6>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="user-avatar-w">
-                                        <img alt="" src="img/avatar3.jpg">
-                                    </div>
-                                    <div class="message-content">
-                                        <h6 class="message-from">
-                                            Bekky Simpson
-                                        </h6>
-                                        <h6 class="message-title">
-                                            Vacation Rentals
-                                        </h6>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="user-avatar-w">
-                                        <img alt="" src="img/avatar4.jpg">
-                                    </div>
-                                    <div class="message-content">
-                                        <h6 class="message-from">
-                                            Alice Priskon
-                                        </h6>
-                                        <h6 class="message-title">
-                                            Payment Confirmation
-                                        </h6>
-                                    </div>
-                                </a>
-                            </li>
+
                         </ul>
                     </div>
                 </div>
@@ -364,77 +319,7 @@
             START - Messages Link in secondary top menu
             -------------------->
                 <div class="messages-notifications os-dropdown-trigger os-dropdown-position-right">
-                    <i class="os-icon os-icon-zap"></i>
-                    <div class="new-messages-count">
-                        4
-                    </div>
-                    <div class="os-dropdown light message-list">
-                        <div class="icon-w">
-                            <i class="os-icon os-icon-zap"></i>
-                        </div>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <div class="user-avatar-w">
-                                        <img alt="" src="img/avatar1.jpg">
-                                    </div>
-                                    <div class="message-content">
-                                        <h6 class="message-from">
-                                            John Mayers
-                                        </h6>
-                                        <h6 class="message-title">
-                                            Account Update
-                                        </h6>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="user-avatar-w">
-                                        <img alt="" src="img/avatar2.jpg">
-                                    </div>
-                                    <div class="message-content">
-                                        <h6 class="message-from">
-                                            Phil Jones
-                                        </h6>
-                                        <h6 class="message-title">
-                                            Secutiry Updates
-                                        </h6>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="user-avatar-w">
-                                        <img alt="" src="img/avatar3.jpg">
-                                    </div>
-                                    <div class="message-content">
-                                        <h6 class="message-from">
-                                            Bekky Simpson
-                                        </h6>
-                                        <h6 class="message-title">
-                                            Vacation Rentals
-                                        </h6>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="user-avatar-w">
-                                        <img alt="" src="img/avatar4.jpg">
-                                    </div>
-                                    <div class="message-content">
-                                        <h6 class="message-from">
-                                            Alice Priskon
-                                        </h6>
-                                        <h6 class="message-title">
-                                            Payment Confirmation
-                                        </h6>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    @include('partials.clean.notifications')
                 </div>
                 <!--------------------
                 END - Messages Link in secondary top menu
@@ -585,6 +470,7 @@
 <script src="/assets/light/bower_components/ckeditor/ckeditor.js"></script>
 <script src="/assets/light/bower_components/bootstrap-validator/dist/validator.min.js"></script>
 <script src="/assets/light/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="/assets/light/bower_components/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 <script src="/assets/light/bower_components/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>
 <script src="/assets/light/bower_components/dropzone/dist/dropzone.js"></script>
 <script src="/assets/light/bower_components/editable-table/mindmup-editabletable.js"></script>

@@ -5,7 +5,7 @@
             <h4 class="card-title">Field Orientation Dates (This function is under construction)</h4>
 
             <div class="list-wrapper">
-                <ul class="d-flex flex-column-reverse text-white todo-list-custom">
+                <ul class="d-flex flex-column-reverse todo-list-custom">
                     @if( in_array(21, explode(',', $employee->additional_postions )))
                         @foreach($employee->ftopaydates->sortByDesc('date') as $row)
                             <li>

@@ -29,7 +29,7 @@
         </div>
 
         <div class="md-form">
-            <label >Pick Up Location</label>
+            <label >Run Number</label>
             <input type="text" id="run_id" name="run_id"
                    value="@if($edit){{$qa->run_id}} @else{{old('run_id')}}@endif" class="form-control"
                    placeholder='Enter Run ID.'>
@@ -160,7 +160,7 @@
         <div class="row">
             <div class="card w-100">
                 <div class="card-body">
-                    <div class="row">
+                    <div class="row mb-2">
                         <div class="co-lg-12 col-md-12">
                             1. Were the crew's full names, certifications, unit info, and patient demographics
                             completed?
@@ -206,7 +206,7 @@
 
         </div>
 
-        <div class="row">
+        <div class="row mb-3">
             <div class="card w-100">
                 <div class="card-body">
                     <div class="row">
@@ -256,7 +256,7 @@
 
         </div>
 
-        <div class="row">
+        <div class="row mb-3">
             <div class="card w-100">
                 <div class="card-body">
                     <div class="row">
@@ -306,7 +306,7 @@
 
         </div>
 
-        <div class="row">
+        <div class="row mb-3">
 
             <div class="card w-100">
                 <div class="card-body">
@@ -356,7 +356,7 @@
             </div>
 
         </div>
-        <div class="row">
+        <div class="row mb-3">
             <div class="card w-100">
                 <div class="card-body">
                     <div class="row">
@@ -405,7 +405,7 @@
 
         </div>
 
-        <div class="row">
+        <div class="row mb-3">
             <div class="card w-100">
                 <div class="card-body">
                     <div class="row">
@@ -455,7 +455,7 @@
 
         </div>
 
-        <div class="row">
+        <div class="row mb-3">
             <div class="card w-100">
                 <div class="card-body">
                     <div class="row">
@@ -505,7 +505,7 @@
 
         </div>
 
-        <div class="row">
+        <div class="row mb-3">
             <div class="card w-100">
                 <div class="card-body">
                     <div class="row">
@@ -555,7 +555,7 @@
 
         </div>
 
-        <div class="row">
+        <div class="row mb-3">
             <div class="card w-100">
                 <div class="card-body">
                     <div class="row">
@@ -605,7 +605,7 @@
 
         </div>
 
-        <div class="row">
+        <div class="row mb-3">
             <div class="card w-100">
                 <div class="card-body">
                     <div class="row">

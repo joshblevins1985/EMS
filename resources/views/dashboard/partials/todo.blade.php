@@ -19,7 +19,7 @@
 				<button class="add btn btn-primary todo-list-add-btn">Add</button>
 			</div>
 			<div class="list-wrapper">
-				<ul class="d-flex flex-column-reverse text-white todo-list todo-list-custom">
+				<ul class="d-flex flex-column-reverse todo-list todo-list-custom">
 					@foreach($todos as $todo)
 					<li>
 						<div class="form-check form-check-primary">

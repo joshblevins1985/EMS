@@ -1,68 +1,44 @@
-<i class="os-icon os-icon-mail-14"></i>
+<i class="far fa-bell"></i>
 <div class="new-messages-count">
-    12
+    {{ auth()->user()->unreadNotifications->count() }}
 </div>
 <div class="os-dropdown light message-list">
+
+    @if(auth()->user()->unreadNotifications->count())
+
     <ul>
         <li>
-            <a href="#">
+            <a href="{{ route('markAllRead') }}">
                 <div class="user-avatar-w">
-                    <img alt="" src="img/avatar1.jpg">
+                    <i class="fas fa-trash-alt text-danger"></i>
                 </div>
                 <div class="message-content">
                     <h6 class="message-from">
-                        John Mayers
+                        Mark all notifications as read.
                     </h6>
                     <h6 class="message-title">
-                        Account Update
+
                     </h6>
                 </div>
             </a>
         </li>
+        @foreach(auth()->user()->unreadNotifications as $notification)
         <li>
             <a href="#">
                 <div class="user-avatar-w">
-                    <img alt="" src="img/avatar2.jpg">
+                    @if(empty($notification->data['img']))	<i class="mdi mdi-bell-ring text-warning"></i> @else <img src="{{ asset($notification->data['img']) }} " alt="Notification" height="42" width="42"> @endif
                 </div>
                 <div class="message-content">
                     <h6 class="message-from">
-                        Phil Jones
+                        {!! $notification->data['data'] !!}
                     </h6>
                     <h6 class="message-title">
-                        Secutiry Updates
+                        {{ Carbon\Carbon::parse($notification->created_at)->diffForHumans() }}
                     </h6>
                 </div>
             </a>
         </li>
-        <li>
-            <a href="#">
-                <div class="user-avatar-w">
-                    <img alt="" src="img/avatar3.jpg">
-                </div>
-                <div class="message-content">
-                    <h6 class="message-from">
-                        Bekky Simpson
-                    </h6>
-                    <h6 class="message-title">
-                        Vacation Rentals
-                    </h6>
-                </div>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <div class="user-avatar-w">
-                    <img alt="" src="img/avatar4.jpg">
-                </div>
-                <div class="message-content">
-                    <h6 class="message-from">
-                        Alice Priskon
-                    </h6>
-                    <h6 class="message-title">
-                        Payment Confirmation
-                    </h6>
-                </div>
-            </a>
-        </li>
-    </ul>
+        @endforeach
+            </ul>
+        @endif
 </div>

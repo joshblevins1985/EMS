@@ -1,4 +1,4 @@
-@extends('layouts.sidebar-fixed')
+@extends('layouts.clean-right')
 
 @section('title', 'Administration Dashboard')
 
@@ -20,7 +20,7 @@
 
     <!-- end page-header -->
     <div class="row">
-        <div class="col-xl-9">
+        <div class="col-xl-12">
             <div class="row-fluid">
                 <!-- start panel -->
                 <div class="panel panel-inverse">
@@ -39,8 +39,6 @@
                 <!-- end panel -->
             </div>
             @if($todos)
-
-            @include('dashboard.partials.todo')
 
             @endif
 
@@ -65,69 +63,8 @@
                 </div>
             @endif
         </div>
-
-        <div class="col-xl-3">
-            <div class="row">
-                <div class="col-xl-12">
-                    <!-- start panel -->
-                    <div class="panel panel-inverse">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">What would you like to do?</h3>
-
-                        </div>
-                        <div class="panel-body pr-1 mb-2">
-                            @if(Auth::user()->id == 450 || Auth::user()->employee->employee_status == 2)
-                                <button class="btn btn-block btn-warning p-4"> Add New Training Date</button>
-                            @endif
-
-                            @if(in_array(21, explode(',', $employee->additional_postions )))
-                                <a href="/fto/dashboard">
-                                    <button class="btn btn-block btn-primary p-4 mb-2"> FTO Dashboard</button>
-                                </a>
-                            @endif
-
-                        </div>
-                    </div>
-                    <!-- end panel -->
-                </div>
-
-            </div>
-
-            <div class="row">
-                <div class="col-xl-12">
-                    <!-- start panel -->
-                    <div class="panel panel-inverse">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Newsletters</h3>
-
-                        </div>
-                        <div class="panel-body pr-1 mb-2">
-                        @foreach($blogs as $blog)
-                            <!-- begin card -->
-                                <div class="card border-0 text-white mb-3">
-
-                                    <div class="">
-                                        <h4 class="card-title">{{$blog->title}}</h4>
-                                        {!! strip_tags(substr($blog->content, 0, 200))   !!}
-                                        <p class="card-text">Last updated {{Carbon\Carbon::parse($blog->updated_At)->diffForHumans()}}</p>
-                                        <p class="card-text"><a class="btn btn-primary" href="/blog/{{$blog->id}}">Read More</a></p>
-                                    </div>
-                                </div>
-                                <!-- end card -->
-                            @endforeach
-                        </div>
-                    </div>
-                    <!-- end panel -->
-                </div>
-
-            </div>
-
-            <div class="row">
-                @include('dashboard.partials.meetingList')
-            </div>
-
-        </div>
     </div>
+
 
 
     @include('dashboard.partials.modalAttendance')
@@ -136,6 +73,66 @@
     @include('fto.partials.ftoDateModal')
     @include('dashboard.partials.modalAddCompanyMeeting')
     @include('dashboard.partials.modalMeeting')
+@endsection
+
+@section('content-right')
+    <div class="col-xl-12">
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- start panel -->
+                <div class="panel panel-inverse">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">What would you like to do?</h3>
+
+                    </div>
+                    <div class="panel-body pr-1 mb-2">
+                        @if(Auth::user()->id == 450 || Auth::user()->employee->employee_status == 2)
+                            <button class="btn btn-block btn-warning p-4"> Add New Training Date</button>
+                        @endif
+
+                        @if(in_array(21, explode(',', $employee->additional_postions )))
+                            <a href="/fto/dashboard">
+                                <button class="btn btn-block btn-primary p-4 mb-2"> FTO Dashboard</button>
+                            </a>
+                        @endif
+
+                    </div>
+                </div>
+                <!-- end panel -->
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- start panel -->
+                <div class="panel panel-inverse">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Newsletters</h3>
+
+                    </div>
+                    <div class="panel-body pr-1 mb-2">
+                    @foreach($blogs as $blog)
+                        <!-- begin card -->
+                            <div class="card border-0 mb-3">
+
+                                <div class="">
+                                    <h4 class="card-title">{{$blog->title}}</h4>
+                                    {!! strip_tags(substr($blog->content, 0, 200))   !!}
+                                    <p class="card-text">Last updated {{Carbon\Carbon::parse($blog->updated_At)->diffForHumans()}}</p>
+                                    <p class="card-text"><a class="btn btn-primary" href="/blog/{{$blog->id}}">Read More</a></p>
+                                </div>
+                            </div>
+                            <!-- end card -->
+                        @endforeach
+                    </div>
+                </div>
+                <!-- end panel -->
+            </div>
+
+        </div>
+
+    </div>
 @endsection
 
 @push('scripts')
