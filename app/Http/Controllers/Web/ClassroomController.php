@@ -494,7 +494,7 @@ class ClassroomController extends Controller
         );
 
 
-        return response()->download($file, $fileName, $headers);
+        //return response()->download($file, $fileName, $headers);
 
     }
 

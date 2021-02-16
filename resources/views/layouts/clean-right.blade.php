@@ -13,6 +13,7 @@
     <link href="/assets/light/apple-touch-icon.png" rel="apple-touch-icon">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
     <link href="/assets/light/bower_components/select2/dist/css/select2.min.css" rel="stylesheet">
+    <link href="/assets/mdb/css/mdb.min.css" rel="stylesheet">
     <link href="/assets/light/bower_components/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
     <link href="/assets/light/bower_components/dropzone/dist/dropzone.css" rel="stylesheet">
     <link href="/assets/light/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
@@ -184,22 +185,11 @@
                 <!--------------------
                 START - Mobile Menu List
                 -------------------->
-                <ul class="main-menu">
+
                 @include('partials.clean.mobile-left-side-bar')
                 <!--------------------
                 END - Mobile Menu List
                 -------------------->
-                    <div class="mobile-menu-magic">
-                        <h4>
-                            Light Admin
-                        </h4>
-                        <p>
-                            Clean Bootstrap 4 Template
-                        </p>
-                        <div class="btn-w">
-                            <a class="btn btn-white btn-rounded" href="https://themeforest.net/item/light-admin-clean-bootstrap-dashboard-html-template/19760124?ref=Osetin" target="_blank">Purchase Now</a>
-                        </div>
-                    </div>
             </div>
         </div>
         <!--------------------
@@ -460,7 +450,9 @@
     </div>
     <div class="display-type"></div>
 </div>
+
 <script src="/assets/light/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/assets/mdb/js/mdb.min.js"></script>
 <script src="/assets/light/bower_components/popper.js/dist/umd/popper.min.js"></script>
 <script src="/assets/light/bower_components/moment/moment.js"></script>
 <script src="/assets/light/bower_components/chart.js/dist/Chart.min.js"></script>

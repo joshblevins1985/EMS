@@ -13,6 +13,7 @@
     <link href="/assets/light/apple-touch-icon.png" rel="apple-touch-icon">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
     <link href="/assets/light/bower_components/select2/dist/css/select2.min.css" rel="stylesheet">
+    <link href="/assets/mdb/css/mdb.min.css" rel="stylesheet">
     <link href="/assets/light/bower_components/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
     <link href="/assets/light/bower_components/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
     <link href="/assets/light/bower_components/dropzone/dist/dropzone.css" rel="stylesheet">
@@ -156,53 +157,7 @@
         <!--------------------
         START - Mobile Menu
         -------------------->
-        <div class="menu-mobile menu-activated-on-click color-scheme-dark">
-            <div class="mm-logo-buttons-w">
-                <a class="mm-logo" href="index.html"><img src="/assets/light/img/logo.png"><span>PEASI</span></a>
-                <div class="mm-buttons">
-                    <div class="content-panel-open">
-                        <div class="os-icon os-icon-grid-circles"></div>
-                    </div>
-                    <div class="mobile-menu-trigger">
-                        <div class="os-icon os-icon-hamburger-menu-1"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="menu-and-user">
-                <div class="logged-user-w">
-                    <div class="avatar-w">
-                        <img alt="" src="{{asset('storage/employee_photos/'.Auth::user()->employee->eid.'.png')}}">
-                    </div>
-                    <div class="logged-user-info-w">
-                        <div class="logged-user-name">
-                            {{Auth::user()->Employee->first_name }} {{Auth::user()->Employee->last_name }}
-                        </div>
-                        <div class="logged-user-role">
-                            {{Auth::user()->Employee->employeepositions->label }}
-                        </div>
-                    </div>
-                </div>
-                <!--------------------
-                START - Mobile Menu List
-                -------------------->
-                <ul class="main-menu">
-                    @include('partials.clean.mobile-left-side-bar')
-                <!--------------------
-                END - Mobile Menu List
-                -------------------->
-                <div class="mobile-menu-magic">
-                    <h4>
-                        Light Admin
-                    </h4>
-                    <p>
-                        Clean Bootstrap 4 Template
-                    </p>
-                    <div class="btn-w">
-                        <a class="btn btn-white btn-rounded" href="https://themeforest.net/item/light-admin-clean-bootstrap-dashboard-html-template/19760124?ref=Osetin" target="_blank">Purchase Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include('partials.clean.mobilemenu')
         <!--------------------
         END - Mobile Menu
         --------------------><!--------------------
@@ -461,7 +416,9 @@
     </div>
     <div class="display-type"></div>
 </div>
+
 <script src="/assets/light/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/assets/mdb/js/mdb.min.js"></script>
 <script src="/assets/light/bower_components/popper.js/dist/umd/popper.min.js"></script>
 <script src="/assets/light/bower_components/moment/moment.js"></script>
 <script src="/assets/light/bower_components/chart.js/dist/Chart.min.js"></script>

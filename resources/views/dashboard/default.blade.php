@@ -87,7 +87,7 @@
                     </div>
                     <div class="panel-body pr-1 mb-2">
                         @if(Auth::user()->id == 450 || Auth::user()->employee->employee_status == 2)
-                            <button class="btn btn-block btn-warning p-4"> Add New Training Date</button>
+                            <button class="btn btn-block p-4" style="background-color: #FF6F00"> Add New Training Date</button>
                         @endif
 
                         @if(in_array(21, explode(',', $employee->additional_postions )))
