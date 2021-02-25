@@ -54,6 +54,9 @@
                     <td>{{$row->EmployeesIn->first_name ?? ''}} {{$row->employeesin->last_name ?? 'Checked Out'}}</td>
                     <td>{{ Carbon\Carbon::parse($row->time_in)->format('m-d-Y H:i') }}</td>
                 </tr>
+                    <tr>
+                        <td colspan="5">Drug Bag #: {{$row->drugbaginfo->bag_number ?? 'UKN'}}      Drug Bag Seal: {{$row->drug_bag_seal_out ?? 'UNK'}}</td>
+                    </tr>
                 @endforeach
             </thead>
         </table>

@@ -45,7 +45,7 @@ class NarcoticLogController extends Controller
     public function create(Request $request)
     {
       $response = "" ;
-      $drugBags = DrugBag::get();
+      $drugBags = DrugBag::where('status','>', 0)->get();
 
         //dd($request->ip());
         //check if rfid field is filled completed....
