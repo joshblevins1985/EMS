@@ -127,7 +127,7 @@
             <select class="mdb-select md-form" name="drugBag">
                 <option value="" disabled selected>Choose your drug bag number.</option>
                 @foreach($drugBags as $db)
-                    <option value="{{$db->id}}"> {{$db->bag_number}} </option>
+                    <option value="{{$db->id}}"> {{$db->station->station ?? ''}} {{$db->bag_number}} </option>
                 @endforeach
             </select>
 
