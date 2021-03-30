@@ -23,8 +23,8 @@
         </div>
 
         <div class="row">
-            <div class="col-6"><h3>Report Start Date:<span>04-1-19</span></h3></div>
-            <div class="col-6"><h3>Report End Date: 03-29-20</h3></div>
+            <div class="col-6"><h3>Report Start Date:<span>04-01-2020</span></h3></div>
+            <div class="col-6"><h3>Report End Date: 03-29-21</h3></div>
         </div>
 
 
@@ -41,7 +41,7 @@
                 $employees = \Vanguard\Employee::whereHas('enrolledcourses', function ($q){
                     $q->where('class_id','=' , 13);
                     $q->whereNotNull('completed');
-                    $q->whereBetween('completed', ['2019-04-1', '2020-03-29']);
+                    $q->whereBetween('completed', ['2020-04-1', '2021-03-29']);
 
                 })->where('company_id', $company->id)->get();
                 ?>
