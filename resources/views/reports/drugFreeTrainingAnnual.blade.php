@@ -41,7 +41,7 @@
                 $employees = \Vanguard\Employee::whereHas('enrolledcourses', function ($q){
                     $q->where('class_id','=' , 13);
                     $q->whereNotNull('completed');
-                    $q->whereBetween('completed', ['2019-04-1', '2020-03-29']);
+                    $q->whereBetween('completed', ['2020-04-01', '2021-03-29']);
 
                 })->where('company_id', $company->id)->get();
                 ?>
