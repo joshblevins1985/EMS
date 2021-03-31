@@ -16,7 +16,7 @@
 <div class="row">
     <!--Panel-->
     <div class="card card-body">
-        <h4 class="card-title">{{$class->course->title}} -- {{$class->iid}}</h4>
+        <h4 class="card-title">{{$class->course->title ?? ''}} -- {{$class->iid}}</h4>
         <div class="row">
             <div class="col-lg-4">
                 Lead Instructor: {{$class->lead->first_name}} {{$class->lead->last_name}}
