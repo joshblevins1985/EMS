@@ -1,6 +1,6 @@
 <tr>
     <td>{{$row->iid}}</td>
-    <td>{{$row->course->title}}</td>
+    <td>{{$row->course->title ?? ''}}</td>
     <td>{{$row->location}}</td>
     <td>{{date('m-d-Y', strtotime($row->start))}}</td>
     <td>{{date('m-d-Y', strtotime($row->end))}}</td>
