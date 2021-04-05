@@ -29,8 +29,8 @@ class AttendanceController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->start = '2020-10-01';
-        $this->end = '2020-12-31';
+        $this->start = '2021-01-01';
+        $this->end = '2021-03-31';
     }
 
 
@@ -134,7 +134,7 @@ class AttendanceController extends Controller
         ->orderBy('date', 'desc')->paginate(10);
         
         
-        return view('attendance.multi', compact('attendance', 'employees', 'occurances', 'work_date'));
+       // return view('attendance.multi', compact('attendance', 'employees', 'occurances', 'work_date'));
     }
     
     /**
@@ -149,8 +149,8 @@ ini_set('memory_limit','2G');
         
         //get all employees
         
-        $start = '2020-10-01';
-        $end = '2020-12-31';
+        $start = '2021-01-01';
+        $end = '2021-03-31';
       
        $employees = Employee::where('status', 5)->orderBy('last_name')->paginate(100);
 
@@ -230,8 +230,8 @@ $employees->map(function ($employee) use ($employeesCount, $complianceCount) {
      */
     public function excell(Request $request)
     {
-         $start = '2020-10-01';
-        $end = '2020-12-31';
+         $start = '2021-01-01';
+        $end = '2021-03-31';
     
            return Excel::download(new AttendanceExport, $start.'-'.$end.'_attendance'.'.xlsx');
   
@@ -287,7 +287,7 @@ $employees->map(function ($employee) use ($employeesCount, $complianceCount) {
             
         
         
-        return view('attendance.create', compact( 'employees', 'occurances'))->with('success', 'You have added a attendance encounter.');
+        //return view('attendance.create', compact( 'employees', 'occurances'))->with('success', 'You have added a attendance encounter.');
         
     }
 
@@ -356,7 +356,7 @@ $employees->map(function ($employee) use ($employeesCount, $complianceCount) {
         
         $date = $request->date_submit;
         
-        return back()->with(compact('date'));
+        //return back()->with(compact('date'));
     }
     
 

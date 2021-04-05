@@ -315,6 +315,7 @@ class EmployeeController extends Controller
 
         //fetch current payperiod
         $payperiod = payperiods::whereRaw("start <= '$td' AND end >= '$td'")->first();
+        //dd($payperiod);
 
         //fetch start and end payperiod dates...
         $start = $payperiod->start;

@@ -44,7 +44,7 @@
 
                 <div class="col-1">
 
-                    @permission('add.attend')
+                    @permission('addattendance')
                     
                     <a class="btn btn-purple" href="/attendance/create">Add Single Entry</a>
                     

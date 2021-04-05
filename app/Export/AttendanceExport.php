@@ -26,8 +26,8 @@ class AttendanceExport implements FromCollection, WithMapping, WithHeadings, Sho
 ini_set('memory_limit','2G');
         
         //get all employees
-      $start = '2020-10-01';
-        $end = '2020-12-31';
+      $start = '2021-01-01';
+        $end = '2021-03-31';
         
        $employees = Employee::where('status', 5)->orderBy('last_name')->get();
 
