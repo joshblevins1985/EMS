@@ -90,7 +90,11 @@
                         @endforeach
                     </div>
                 </div>
-
+                <div class="row">
+                    <div class="col-12">
+                        {!! $da->comments !!}
+                    </div>
+                </div>
             </div>
 
 
