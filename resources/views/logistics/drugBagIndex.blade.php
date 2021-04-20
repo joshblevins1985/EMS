@@ -50,10 +50,10 @@
                     <div class="col-sm-12 col-xl-3">
                         <a class="element-box el-tablo centered trend-in-corner padded bold-label" href="apps_support_index.html">
                             <div class="value">
-
+                                {{count($drugBags->where('status', 2))}}
                             </div>
                             <div class="label">
-
+                                Bags Out
                             </div>
 
                         </a>
@@ -75,6 +75,8 @@
                         <th>Bag ID</th>
                         <th>Seal Number</th>
                         <th>Bag Expires</th>
+                        <th>Employee</th>
+                        <th>Unknown</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -84,6 +86,8 @@
                         <td>{{$d->bag_number ?? ''}}</td>
                         <td>{{$d->currentSealNumber ?? 'Unknown'}}</td>
                         <td>@if($d->bagExpires) {{\Carbon\Carbon::parse($d->bagExpires)->format('m-d-Y')}} @else Unknown @endif</td>
+                        <td>{{$d->lastAssigned->employee->first_name ?? 'Never Assigned'}} {{$d->lastAssigned->employee->last_name ?? ''}}</td>
+                        <td>@if($d->status == 1) In @elseif($d->status == 2) Out @else Unknown @endif </td>
                     </tr>
                     @endforeach
                     </tbody>

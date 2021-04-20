@@ -20,4 +20,8 @@ class DrugBag extends Model
     {
         return $this->belongsTo(UnitLevel::class, 'bagLevelId');
     }
+    public function lastAssigned()
+    {
+        return $this->hasOne(DrugBagSealLog::class, 'bag_id')->latest();
+    }
 }

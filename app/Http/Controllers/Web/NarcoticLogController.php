@@ -173,7 +173,7 @@ class NarcoticLogController extends Controller
         $bagLog = new DrugBagSealLog;
 
         $bagLog->bag_id = $request->drugBag;
-        $bagLog->user_id = $outsignature;
+        $bagLog->user_id = $employee->user_id;
         $bagLog->status = 2;
         $bagLog->save();
     }
