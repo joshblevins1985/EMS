@@ -1435,6 +1435,15 @@ Route::get('/n95', 'EmployeeController@n95');
 //end n95
 
 /**
+ * Drug Bag Inspections
+ */
+Route::get('drugbaginspection/{id?}', 'DrugBagInspectionController@create');
+Route::post('drugbaginspection/add', 'DrugBagInspectionController@store');
+
+Route::get('missingDrugBagInspections', 'ReportsController@missingDrugBagInspections');
+Route::get('drugBagsPdf', 'ReportsController@drugBagsPdf');
+Route::get('drugBagIndex', 'LogisticController@drugBagIndex');
+/**
  * Authentication
  */
 

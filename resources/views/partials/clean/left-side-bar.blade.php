@@ -389,6 +389,10 @@
                         <a href="{{ route('logistic.overview') }}">Overview</a>
                     </li>
 
+                    <li>
+                        <a href="/drugBagIndex">Drug Bag Management</a>
+                    </li>
+
                 </ul>
             </div>
         </div>

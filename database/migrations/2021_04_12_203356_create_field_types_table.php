@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CreateGMapsGeoCacheTable extends Migration
+class CreateFieldTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateGMapsGeoCacheTable extends Migration
      */
     public function up()
     {
-        Schema::create('gmaps_geocache', function (Blueprint $table) {
+        Schema::create('field_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('address');
-            $table->string('latitude');
-            $table->string('longitude');
             $table->timestamps();
+            $table->string('type');
+            $table->text('code');
         });
     }
 
@@ -29,6 +28,6 @@ class CreateGMapsGeoCacheTable extends Migration
      */
     public function down()
     {
-        Schema::drop('gmaps_geocache');
+        Schema::dropIfExists('field_types');
     }
 }
