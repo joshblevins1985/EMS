@@ -124,7 +124,7 @@
             <input type="text" class="form-control clock_id in input-lg tamper_seal" id="tamper_seal" name="tamper_seal" value="{{$box->tamper_seal}}" required></input>
             <label class="white-text" for="out_signature">Tamper Evident Seal #</label>
         </div>
-            <select class="mdb-select md-form" name="drugBag">
+            <select class="mdb-select md-form" name="drugBag" required>
                 <option value="" disabled selected>Choose your drug bag number.</option>
                 @foreach($drugBags as $db)
                     <option value="{{$db->id}}"> {{$db->station->station ?? ''}} {{$db->bag_number}} </option>
@@ -132,7 +132,7 @@
             </select>
 
             <div class="mb-form">
-                <input type="text" class="form-control clock_id" id="bag_seal" name="bag_seal" placeholder="Enter Drug Bag Seal Number" value="" ></input>
+                <input type="text" class="form-control clock_id" id="bag_seal" name="bag_seal" placeholder="Enter Drug Bag Seal Number" value="" required></input>
                 <label class="white-text" for="bag_seal">Drug Bag Seal Number.</label>
             </div>
 

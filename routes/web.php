@@ -1443,6 +1443,30 @@ Route::post('drugbaginspection/add', 'DrugBagInspectionController@store');
 Route::get('missingDrugBagInspections', 'ReportsController@missingDrugBagInspections');
 Route::get('drugBagsPdf', 'ReportsController@drugBagsPdf');
 Route::get('drugBagIndex', 'LogisticController@drugBagIndex');
+
+Route::get('fixDB', function (){
+    $length = 10;
+    $char = 0;
+    $type = 'd';
+    $format = "%{$char}{$length}{$type}"; // or "$010d";
+
+
+    $seals = \Vanguard\DrugBagSealLog::get();
+    foreach($seals as $s)
+    {
+        $rfid = sprintf($format, $s->user_id);
+        $employee = \Vanguard\Employee::where('rfid', $rfid)->first();
+
+        if($employee){
+            $s->user_id = $employee->user_id;
+            $s->timestamps = false;
+            $s->update();
+        }
+
+    }
+    return 'complete';
+});
+
 /**
  * Authentication
  */
