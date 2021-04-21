@@ -128,7 +128,8 @@ class NarcoticLogController extends Controller
             'seal' => 'required',
             'tamper_seal' => 'required',
             'out_signature' => 'required|',
-            'witness_out' => 'required'
+            'witness_out' => 'required',
+            'bag_seal' => 'required'
         ]);
 
         // Strip all but first 10 characters of RFID fields
