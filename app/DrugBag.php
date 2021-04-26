@@ -22,6 +22,6 @@ class DrugBag extends Model
     }
     public function lastAssigned()
     {
-        return $this->hasOne(DrugBagSealLog::class, 'bagId')->latest();
+        return $this->hasOne(DrugBagSealLog::class, 'bag_id')->latest();
     }
 }
