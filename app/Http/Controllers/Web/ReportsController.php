@@ -4,6 +4,7 @@ namespace Vanguard\Http\Controllers\Web;
 use Carbon\Carbon;
 use Vanguard\DispatchIncident;
 use Vanguard\DrugBag;
+use Vanguard\DrugBagInspection;
 use Vanguard\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
@@ -145,6 +146,21 @@ class ReportsController extends Controller
 
         // download pdf
         return $pdf->download();
+    }
+
+    public function drugBagInspection($id)
+    {
+        $inspection = DrugBagInspection::find($id);
+        $title = 'Drug Bag Inspection';
+
+        view()->share('inspection', $inspection);
+        view()->share('title', $title);
+
+        $pdf = PDF::loadView('reports.pdf.drugBagInspection');
+
+        // download pdf
+        return $pdf->inline('db_inspection.pdf');
+        //return view('reports.pdf.drugBagInspection');
     }
 
 }
