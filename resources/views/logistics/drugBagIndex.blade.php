@@ -99,7 +99,7 @@
 @stop
 
 @push('css')
-
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
 @endpush
 
 @push('modals')
@@ -108,6 +108,8 @@
 
 
 @push('scripts')
+
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready( function () {
             $('#drugBagTable').DataTable();
