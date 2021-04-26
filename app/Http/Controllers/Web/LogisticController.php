@@ -24,7 +24,7 @@ class LogisticController extends Controller
     {
         $this->middleware('auth');
 
-        $this->middleware('permission:logistics.menu');
+        $this->middleware('permission:logistics');
     }
 
     public function units()
