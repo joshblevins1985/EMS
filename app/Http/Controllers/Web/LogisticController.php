@@ -5,6 +5,7 @@ namespace Vanguard\Http\Controllers\Web;
 use SebastianBergmann\CodeCoverage\Report\Xml\Unit;
 use Vanguard\DispatchIncident;
 use Vanguard\DrugBag;
+use Vanguard\DrugBagInspection;
 use Vanguard\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -23,14 +24,14 @@ class LogisticController extends Controller
     {
         $this->middleware('auth');
 
-        //$this->middleware('permission:logistics.menu');
+        $this->middleware('permission:logistics.menu');
     }
 
     public function units()
     {
-        $units = Units::where('companyId', auth()->user()->company->id)->get();
-        $stations = Station::where('companyId', auth()->user()->company->id)->where('status', 1)->get();
-        $levels = UnitLevel::where('companyId', auth()->user()->company->id)->where('status', 1)->get();
+        $units = Units::where('companyId', auth()->user()->employee->company_id)->get();
+        $stations = Station::where('companyId', auth()->user()->employee->company_id)->where('status', 1)->get();
+        $levels = UnitLevel::where('companyId', auth()->user()->employee->company_id)->where('status', 1)->get();
 
         return view('logistics.units', compact('units', 'stations', 'levels'));
     }
@@ -42,7 +43,7 @@ class LogisticController extends Controller
         $licExpiration = Carbon::parse($request->licensePlateExpiration);
         $data['licensePlateExpiration'] = $licExpiration;
         $data['odometerDate'] = $odometerDate;
-        $data['companyId'] = auth()->user()->company->id;
+        $data['companyId'] = auth()->user()->employee->company_id;
 
         $insert = Units::create($data);
         return back();
@@ -57,12 +58,12 @@ class LogisticController extends Controller
 
         $inspections = DrugBag::whereDoesntHave('inspection' , function($q){
             $q->whereBetween('created_at', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()]);
-        })->where('companyId', auth()->user()->employee->company_id)->where('statusId', 1)->get();
+        })->where('companyId', auth()->user()->employee->company_id)->get();
 
         foreach($drugBags as $i)
         {
             if($i->inspection){
-                foreach ($i->inspection->items as $key => $item)
+                foreach ($i->inspection->items['drugs'] as $key => $item)
                 {
                     if(DateTime::createFromFormat('Y-m-d', $item) !== false){
                         if(Carbon::parse($item) <= $endofmonth){
@@ -75,5 +76,12 @@ class LogisticController extends Controller
 
         }
         return view('logistics.drugBagIndex', compact('drugBags', 'expiredDrugsCount', 'inspections'));
+    }
+
+    public function inspections()
+    {
+        $inspections = DrugBagInspection::where('companyId', auth()->user()->employee->company_id)->get();
+
+        return view('logistics.drugBagInspections', compact('inspections'));
     }
 }

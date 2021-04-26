@@ -16,5 +16,10 @@ class DrugBagInspection extends Model
 
     protected $casts = [
         'items' => 'array'
-        ];
+    ];
+
+    public function bag()
+    {
+        return $this->belongsTo(DrugBag::class, 'drugBagId');
+    }
 }

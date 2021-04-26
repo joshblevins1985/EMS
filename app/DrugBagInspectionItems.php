@@ -12,4 +12,8 @@ class DrugBagInspectionItems extends Model
     {
         return $this->belongsTo(FieldType::class, 'typeId');
     }
+    public function state()
+    {
+        return $this->hasMany(DrugBagInspectionItemsState::class, 'drugId');
+    }
 }

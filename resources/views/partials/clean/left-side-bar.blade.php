@@ -58,17 +58,9 @@
             <div class="sub-menu-i">
                 <ul class="sub-menu">
                     <li>
-                        <a href="#"> MVC Report </a>
+                        <a href="/drugbaginspection"> Drug Bag Inspection </a>
                     </li>
-                    <li>
-                        <a href="#"> Incident Report </a>
-                    </li>
-                    <li>
-                        <a href="#"> Improper Transport </a>
-                    </li>
-                    <li>
-                        <a href="#"> Unit Repair Request </a>
-                    </li>
+
 
                 </ul>
             </div>

@@ -50,6 +50,7 @@
         "tzsk/sms": "^2.0",
         "vimeo/vimeo-api": "^2.0",
         "webpatser/laravel-countries": "dev-master"
+
     },
     "require-dev": {
         "symfony/css-selector": "~4.0",

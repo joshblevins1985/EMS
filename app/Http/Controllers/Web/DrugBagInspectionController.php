@@ -39,12 +39,20 @@ class DrugBagInspectionController extends Controller
      */
     public function create($id = null)
     {
-        $employees = User::where('companyId', auth()->user()->companyId)->orderBy('last_name')->get();
-        $drugBag = DrugBag::find($id);
-        $drugBags = DrugBag::where('companyId', auth()->user()->companyId)->where('statusId', 1)->get();
+        $employees = User::where('companies_id', auth()->user()->employee->company_id)->orderBy('last_name')->get();
+        $drugBag = DrugBag::with('inspection')->find($id);
+        $drugBags = DrugBag::where('companyId', auth()->user()->employee->company_id)->where('statusId', 1)->get();
+        $levels = $drugBag ? $drugBag->bagLevelId : 0;
+        $states = $drugBag ? $drugBag->stateId : 0;
         $drugs = DrugBagInspectionItems::
-        where('companyId', auth()->user()->companyId)
-            ->whereIn('bagTypeId', [$drugBag->bagLevelId])->get();
+        where('companyId', auth()->user()->employee->company_id)
+            ->whereIn('bagTypeId', [$levels])
+            ->whereHas('state', function ($q) use($states){
+                $q->whereIn('stateId', [$states] );
+            })
+            ->get();
+
+        //dd($drugBag->inspection->items['drugs']);
 
         return view('drugbaginspections.store', compact('id', 'drugBag','drugs', 'drugBags', 'employees'));
     }
@@ -57,22 +65,33 @@ class DrugBagInspectionController extends Controller
      */
     public function store(Request $request)
     {
-      //  dd($request->all());
+        //dd($request->expiredDrugs);
+        //  dd($request->all());
+
+        $array = array(
+            'baginfo' => $request->only('drugBagId', 'oldSeal', 'newSeal', 'assignedId', 'witnessId'),
+            'drugs' =>   $request->except('_token', 'drugBagId', 'oldSeal', 'newSeal', 'assignedId', 'witnessId', 'expiredDrugs'),
+            'expired' => $request->expiredDrugs
+
+        );
+
+        //dd($array);
+
         $di = new DrugBagInspection();
-        $di->companyId = auth()->user()->companyId;
+        $di->companyId = auth()->user()->employee->company_id;
         $di->drugBagId = $request->drugBagId;
         $di->userId = auth()->user()->id;
-        $di->items = $request->except('_token');
+        $di->items = $array;
         $di->save();
         //dd($request->all());
         $dates = [];
         $endofmonth = Carbon::now()->endOfMonth();
-        foreach($request->except('_token', 'drugBagId'. 'oldSeal', 'newSeal', 'assignedId', 'witnessId') as $key => $item)
+        foreach($request->except('_token', 'drugBagId'. 'oldSeal', 'newSeal', 'assignedId', 'witnessId', 'expiredDrugs') as $key => $item)
         {
 
             if(DateTime::createFromFormat('Y-m-d', $item) !== false){
-                    //dd($item);
-                    array_push($dates, $item);
+                //dd($item);
+                array_push($dates, $item);
             }
         }
         //dd($dates);

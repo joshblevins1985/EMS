@@ -1439,10 +1439,32 @@ Route::get('/n95', 'EmployeeController@n95');
  */
 Route::get('drugbaginspection/{id?}', 'DrugBagInspectionController@create');
 Route::post('drugbaginspection/add', 'DrugBagInspectionController@store');
+Route::get('expmeds/{id?}', 'DrugBagInspectionController@expmeds');
+Route::get('inspectionForm/{id?}', 'DrugBagInspectionController@inspection');
+Route::get('drugbaginspectionPdf/{id?}', 'ReportsController@drugBagInspection');
+Route::get('drugbaginspections', 'LogisticController@inspections');
 
 Route::get('missingDrugBagInspections', 'ReportsController@missingDrugBagInspections');
 Route::get('drugBagsPdf', 'ReportsController@drugBagsPdf');
 Route::get('drugBagIndex', 'LogisticController@drugBagIndex');
+
+Route::get('updateDrug', function (){
+    $drugs = \Vanguard\DrugBagInspectionItems::get();
+
+    foreach($drugs as $d)
+    {
+        $array = explode(',', $d->stateId);
+        //dd($array);
+        foreach($array as $key => $value)
+        {
+            $drugState = new \Vanguard\DrugBagInspectionItemsState();
+            $drugState->drugId = $d->id;
+            $drugState->stateId = $value;
+            $drugState->save();
+        }
+    }
+
+});
 
 Route::get('fixDB', function (){
     $length = 10;
