@@ -1,4 +1,4 @@
-@extends('layouts.reports')
+@extends('layouts.report')
 
 @section('page-title', __('Missing Drug Bag Inspections'))
 @section('page-heading', __('Missing Drug Bag Inspections'))
