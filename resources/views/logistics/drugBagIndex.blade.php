@@ -82,8 +82,8 @@
                     <tbody>
                     @foreach($drugBags as $d)
                         <tr>
-                            <td>{{$d->station->description}}</td>
-                            <td>{{$d->description ?? ''}}</td>
+                            <td>{{$d->station->station}}</td>
+                            <td>{{$d->bag_number ?? ''}}</td>
                             <td>{{$d->currentSealNumber ?? 'Unknown'}}</td>
                             <td>@if($d->bagExpires) {{\Carbon\Carbon::parse($d->bagExpires)->format('m-d-Y')}} @else Unknown @endif</td>
                             <td>{{$d->lastAssigned->employee->first_name ?? 'Never Assigned'}} {{$d->lastAssigned->employee->last_name ?? ''}}</td>
