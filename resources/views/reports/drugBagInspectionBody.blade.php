@@ -97,10 +97,7 @@
                             .'</td>';
 
                         ?>
-                        <?php
-                        $drug = \Vanguard\DrugBagInspectionItems::where('companyId', auth()->user()->employee->company_id)->where('arrayName', $key)->first();
-                        ?>
-                        <td>{{$drug->name ?? ''}}</td>
+
                     @endif
 
                 @endforeach
