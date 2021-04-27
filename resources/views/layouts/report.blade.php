@@ -15,6 +15,9 @@
     <!-- Main styles for this application-->
     @stack('css')
     <style>
+        table, tr, td, th, tbody, thead, tfoot {
+            page-break-inside: avoid !important;
+        }
         .element-wrapper {
             padding-bottom: 3rem;
         }
