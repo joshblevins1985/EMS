@@ -54,7 +54,7 @@
                     $i++;
 
                     // Making different path,depends on place where function is called,panel.php or homepage.php
-                    if ($i % 4 === 0) {
+                    if ($i % 3 === 0) {
                         echo '<tr></tr>';
                     }
                         if($value) { $message = \Carbon\Carbon::parse($value)->format('m-d-Y'); $bg =''; } else{ $message = 'Replace'; $bg = 'bg-warning';}
