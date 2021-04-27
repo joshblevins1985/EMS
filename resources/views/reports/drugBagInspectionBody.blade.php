@@ -39,7 +39,9 @@
 
     </div>
 @endif
-
+<div class="class">
+    <div class="col-12 text-center"> <h3>Drug Expiration</h3> </div>
+</div>
 <div class="row">
     <div class="col-12">
         <table class="table">
@@ -52,13 +54,14 @@
                     $i++;
 
                     // Making different path,depends on place where function is called,panel.php or homepage.php
-                    if ($i % 3 === 0) {
+                    if ($i % 4 === 0) {
                         echo '<tr></tr>';
                     }
-                    echo '<td>' .
+                        if($value) { $message = \Carbon\Carbon::parse($value)->format('m-d-Y'); $bg =''; } else{ $message = 'Replace'; $bg = 'bg-warning';}
+                    echo '<td class="'.$bg.'">' .
                         $drug->name
                         . '-' .
-                        \Carbon\Carbon::parse($value)->format('m-d-Y')
+                        $message
                         . '</td>';
 
                     ?>
@@ -67,6 +70,42 @@
         </table>
 
 
+    </div>
+</div>
+<div class="class">
+    <div class="col-12 text-center"> <h3>Missing or Needs Replaced</h3> </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <tr>
+                <?php $i = 0; ?>
+                @foreach($inspection->items['drugs'] as $key => $value)
+
+                    @if(is_null($value))
+                        <?php
+                        $drug = \Vanguard\DrugBagInspectionItems::where('companyId', auth()->user()->employee->company_id)->where('arrayName', $key)->first();
+                        $i++;
+
+                        // Making different path,depends on place where function is called,panel.php or homepage.php
+                        if ($i % 4 === 0) {
+                            echo '<tr></tr>';
+                        }
+
+                        echo '<td class="">' .
+                            $drug->name
+                            .'</td>';
+
+                        ?>
+                        <?php
+                        $drug = \Vanguard\DrugBagInspectionItems::where('companyId', auth()->user()->employee->company_id)->where('arrayName', $key)->first();
+                        ?>
+                        <td>{{$drug->name ?? ''}}</td>
+                    @endif
+
+                @endforeach
+            </tr>
+        </table>
     </div>
 </div>
 

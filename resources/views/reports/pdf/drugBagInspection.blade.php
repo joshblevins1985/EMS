@@ -23,7 +23,7 @@
                 </tr>
                 <tr>
                     <th>Drug Bag Id</th>
-                    <td>{{$inspection->bag->description ?? '' }}</td>
+                    <td>{{$inspection->bag->bag_number ?? '' }}</td>
                 </tr>
                 <tr>
                     <th>Requested By:</th>
