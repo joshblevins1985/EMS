@@ -159,8 +159,8 @@ class ReportsController extends Controller
         $pdf = PDF::loadView('reports.pdf.drugBagInspection');
 
         // download pdf
-        //return $pdf->inline('db_inspection.pdf');
-        return view('reports.pdf.drugBagInspection');
+        return $pdf->inline('db_inspection.pdf');
+        //return view('reports.pdf.drugBagInspection');
     }
 
 }
