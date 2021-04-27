@@ -16,4 +16,8 @@ class DrugBagInspectionItems extends Model
     {
         return $this->hasMany(DrugBagInspectionItemsState::class, 'drugId');
     }
+    public function level()
+    {
+        return $this->hasMany(DrugBagInspectionItemsLevel::class, 'drugId');
+    }
 }

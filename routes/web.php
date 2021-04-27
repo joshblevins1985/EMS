@@ -1453,13 +1453,13 @@ Route::get('updateDrug', function (){
 
     foreach($drugs as $d)
     {
-        $array = explode(',', $d->stateId);
+        $array = explode(',', $d->bagTypeId);
         //dd($array);
         foreach($array as $key => $value)
         {
-            $drugState = new \Vanguard\DrugBagInspectionItemsState();
+            $drugState = new \Vanguard\DrugBagInspectionItemsLevel();
             $drugState->drugId = $d->id;
-            $drugState->stateId = $value;
+            $drugState->levelId = $value;
             $drugState->save();
         }
     }

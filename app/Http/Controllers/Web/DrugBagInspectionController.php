@@ -46,7 +46,9 @@ class DrugBagInspectionController extends Controller
         $states = $drugBag ? $drugBag->stateId : 0;
         $drugs = DrugBagInspectionItems::
         where('companyId', auth()->user()->employee->company_id)
-            ->whereIn('bagTypeId', [$levels])
+            ->whereHas('level', function ($q) use($levels){
+                $q->whereIn('levelId', [$levels] );
+            })
             ->whereHas('state', function ($q) use($states){
                 $q->whereIn('stateId', [$states] );
             })
