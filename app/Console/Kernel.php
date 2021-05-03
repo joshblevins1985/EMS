@@ -46,14 +46,14 @@ class Kernel extends ConsoleKernel
 
     //$schedule->command('Certifications:Expiring')
     //               ->weeklyOn(1, '8:00');
-    $schedule->command('qa:unread')
-                   ->weeklyOn(1, '8:00');
+   // $schedule->command('qa:unread')
+     //              ->weeklyOn(1, '8:00');
                    
     $schedule->command('notification.driver')
                    ->weeklyOn(1, '6:00');
                    
-    $schedule->command('education:admin_update')
-                   ->weekdays()->at('17:30');
+   // $schedule->command('education:admin_update')
+     //              ->weekdays()->at('17:30');
                    
     //$schedule->command('Unit:RandomReview')
     //               ->weeklyOn(1, '8:00');

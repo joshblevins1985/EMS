@@ -193,7 +193,7 @@ class ReportController extends Controller
     public function competencyReport()
     {
 
-        $employees = Employee::where('status', 5)->where('primary_position', 5)->orderBy('last_name')->get();
+        $employees = Employee::where('status', 5)->whereIn('primary_position', [3,4,5,8])->orderBy('last_name')->get();
 
         view()->share('employees', $employees);
 

@@ -48,6 +48,7 @@
                 <tr>
                     <th>Employee</th>
                     <th>Station</th>
+                    <th>Handling</th>
                     <th>Eagle Vent</th>
                     <th>AHP-3000 Vent</th>
                     <th>BiPap Management</th>
@@ -59,6 +60,19 @@
                     <tr>
                         <td>{{ $e->last_name }} {{ $e->first_name }}</td>
                         <td>{{ $e->station->station }}</td>
+                        <td>
+                            @if(count($e->competencies->where('competency_id', 1)))
+                                @foreach($e->competencies->where('competency_id', 1) as $c)
+                                    @if(is_null($c->completed))
+
+                                    @else
+                                        {{ Carbon\Carbon::parse($c->completed)->format('m-d-Y') }}
+                                    @endif
+                                @endforeach
+                            @else
+
+                            @endif
+                        </td>
                         <td>
                             @if(count($e->competencies->where('competency_id', 11)))
                                 @foreach($e->competencies->where('competency_id', 11) as $c)
