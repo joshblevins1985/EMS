@@ -172,7 +172,7 @@ final class Versions
   'symfony/dom-crawler' => 'v4.4.7@4d0fb3374324071ecdd94898367a3fa4b5563162',
   'theseer/tokenizer' => '1.1.3@11336f6f84e16a720dae9d8e6ed5019efa85a0f9',
   'webmozart/assert' => '1.7.0@aed98a490f9a8f78468232db345ab9cf606cf598',
-  'loshmis/vanguard' => 'dev-master@06e915af5fcd99eb83254cf2bffc28badbadfb40',
+  'loshmis/vanguard' => 'dev-master@bb8f8d12f983714c6f9c7644cc1d694aa48e13ec',
 );
 
     private function __construct()

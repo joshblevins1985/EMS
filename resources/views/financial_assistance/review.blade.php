@@ -474,7 +474,7 @@
         <script src="{{ url('/assets/js/signature-pad/app.js') }}"></script>
 
 
-    </script>
+
 
  <script>
 

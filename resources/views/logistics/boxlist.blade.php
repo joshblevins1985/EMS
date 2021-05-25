@@ -100,7 +100,7 @@
                                     @endif
                                 @endforeach
                             </h2>
-                        <div class="text-muted">Total BoxesUsed</div>
+                        <div class="text-muted">Total Boxes Used</div>
                     </div>
                 </div>
             </div>

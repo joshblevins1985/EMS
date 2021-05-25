@@ -48,8 +48,8 @@
                 </tr>
                 @foreach($log as $row)
                 <tr>
-                    <td>{{$row->narcoticbox->box_number}} - {{$row->narcoticbox->id}}</td>
-                    <td>{{$row->employees->first_name}} {{$row->employees->last_name}}</td>
+                    <td>{{$row->narcoticbox->box_number ?? ''}} - {{$row->narcoticbox->id ?? ''}}</td>
+                    <td>{{$row->employees->first_name ?? ''}} {{$row->employees->last_name ?? ''}}</td>
                     <td>{{ Carbon\Carbon::parse($row->time_out)->format('m-d-Y H:i') }}</td>
                     <td>{{$row->EmployeesIn->first_name ?? ''}} {{$row->employeesin->last_name ?? 'Checked Out'}}</td>
                     <td>{{ Carbon\Carbon::parse($row->time_in)->format('m-d-Y H:i') }}</td>

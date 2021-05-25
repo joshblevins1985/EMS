@@ -51,13 +51,16 @@
 
                                             @if(DateTime::createFromFormat('Y-m-d', $value) !== false)
                                                 @if(\Carbon\Carbon::parse($value) <= \Carbon\Carbon::now()->endOfMonth())
-                                                    <?php $drug = \Vanguard\DrugBagInspectionItems::where('companyId', auth()->user()->companyId)->where('arrayName', $key)->first() ?>
-                                                    <tr>
+                                                    <?php $drug = \Vanguard\DrugBagInspectionItems::where('companyId', auth()->user()->companies_id)->where('arrayName', $key)->first();
+                                                    //dd($key);
+                                                    ?>
+
+                                                        <tr>
                                                         <th>{{$drug->name ?? ''}}</th>
                                                         <th>{{\Carbon\Carbon::parse($value)->format('m-d-Y')}}</th>
                                                         <th>
                                                             <div class="form-check">
-                                                                <input class="form-check-input" type="checkbox" value="{{$drug->arrayName}}" id="{{$drug->arrayName}}" name="expiredDrugs[]">
+                                                                <input class="form-check-input" type="checkbox" value="{{$drug->arrayName }}" id="{{$drug->arrayName  }}" name="expiredDrugs[]">
                                                                 <label class="form-check-label" for="flexCheckDefault">
                                                                     This medication has been properly disposed of.
                                                                 </label>

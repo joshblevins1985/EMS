@@ -119,11 +119,11 @@
                         <tbody>
                         @foreach($nlog as $row)
                             <tr>
-                                <td>{{$row->employees->first_name or ''}} {{$row->employees->last_name or ''}} / {{$row->witnessout->first_name or ''}} {{$row->witnessout->last_name or ''}}</td>
+                                <td>{{$row->employees->first_name ?? ''}} {{$row->employees->last_name ?? ''}} / {{$row->witnessout->first_name ?? ''}} {{$row->witnessout->last_name ?? ''}}</td>
                                 
                                 <td>{{$row->seal}}</td>
                                 <td>{{$row->tamper_seal}}</td>
-                                <td>{{$row->employeesin->first_name or ''}} {{$row->employeesin->last_name or ''}} / {{$row->witnessin->first_name or ''}} {{$row->witnessin->last_name or ''}}</td>
+                                <td>{{$row->employeesin->first_name ?? ''}} {{$row->employeesin->last_name ?? ''}} / {{$row->witnessin->first_name ?? ''}} {{$row->witnessin->last_name ?? ''}}</td>
                                 
                                 <td>{{$row->seal_in}}</td>
                                 <td>{{$row->tamper_seal_in}}</td>
