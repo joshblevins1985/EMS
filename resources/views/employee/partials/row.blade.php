@@ -8,7 +8,7 @@
                 <!--Card image-->
                 <div class="view view-cascade top rounded-circle">
                     <a href="/employee/id/{{$employee->id}}"> <img src="{{asset('employee_photos/'.$employee->eid.'.png')}}" class="card-img-top rounded-circle"
-                                                             onerror="this.src='/employee_photos/nouser.png'"  alt="" style="height:300px;"> </a>
+                                                             onerror="{{asset('/employee_photos/nouser.png')}}"  alt="" style="height:300px;"> </a>
                     <a href="/employee/id/{{$employee->id}}">
                         <div class="mask rgba-white-slight"></div>
                     </a>

@@ -305,11 +305,6 @@
       <div class="modal-body" style="height: 600px;">
         <form class="form-inline" role="search" method="GET" action="{{url('/boxreport')}}">
                     @csrf
-                        
-                    
-
-                    
-            
             <div class="md-form">
                 <input placeholder="Selected date" type="text" id="start" name="start" class="form-control datepicker">
                 <label for="expiration">Start Date</label>
