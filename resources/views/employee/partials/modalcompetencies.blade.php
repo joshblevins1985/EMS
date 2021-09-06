@@ -28,6 +28,7 @@
                             <div class="col-lg-9">
                                 
                                     <form action="/emp/competency/complete" method="post" id="my_form">
+                                        @csrf
                                         <div class="row">
                                     <div class="col-lg-6">
                                     <input placeholder="Selected date" type="text" id="completed" name="completed" value="@if($row->completed) {{Carbon\Carbon::parse($row->completed)->format('m/d/Y')}} @else @endif" class="form-control datepicker">
