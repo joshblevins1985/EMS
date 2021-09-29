@@ -247,7 +247,7 @@
                                 <td>
                                     <p>{{$row->employee->last_name ?? ''}} {{$row->employee->first_name ?? ''}}</p> {{\Carbon\Carbon::parse($row->created_at)->format('m-d-Y H:i')}}
                                 </td>
-                                <td>QA-{{date('y', strtotime($row->date))}}-{{sprintf('%05d', $row->id )}} </br> {{$row->run_id ?? ''}} </td>
+                                <td>QA-{{date('y', strtotime($row->date))}}-{{sprintf('%05d', $row->id )}}  </td>
                                 <td>@if($row->grade == 1) S @elseif($row->grade == 2) I @endif</td>
                                 <td>{{$row->percent}} %</td>
                                 <td>{!! $row->comments !!}</td>
