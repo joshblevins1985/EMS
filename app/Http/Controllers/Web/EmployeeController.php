@@ -1038,7 +1038,7 @@ class EmployeeController extends Controller
                         //dd($publicFileName);
 
                         $employee = Employee::find($request->pid);
-                        $employee->photo = $publicFileName;
+                        $employee->photo = $filename;
                         $employee->save();
 
 
