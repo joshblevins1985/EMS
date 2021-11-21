@@ -1032,7 +1032,8 @@ class EmployeeController extends Controller
 
                         $emp = Employee::find($request->pid);
 
-                        //$filename = $attachment->storeAs('employee_photos', $emp->eid . '.png');
+                        $filename = $attachment->storeAs('employee_photos', $emp->eid . '.png');
+                        Storage::disk('local')->put('employee_photos'.'/'.$emp->eid . '.png', 'public');
                         $publicFileName = $attachment->storeAs('/public/employee_photos', $emp->eid . '.png');
 
                         //dd($publicFileName);
