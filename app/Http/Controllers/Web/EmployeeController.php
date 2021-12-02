@@ -1101,9 +1101,9 @@ class EmployeeController extends Controller
         // pass view file
         $pdf = PDF::loadView('employee.id')->setPaper('B8')->setOption('margin-left', 0)->setOption('margin-right', 0)->setOption('margin-bottom', 0)->setOption('margin-top', 0);
         // download pdf
-        //return $pdf->stream('idbadge.pdf');
+        return $pdf->stream('idbadge.pdf');
 
-        return view('employee.id');
+        //return view('employee.id');
 
 
     }
