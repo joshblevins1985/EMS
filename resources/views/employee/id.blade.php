@@ -31,7 +31,7 @@
 
     <div class="row-fluid">
         <div class="col-lg-12" style="margin-top: 15px">
-            <p style="text-align:center;"><img src="{{'data:image/png;base64,'.base64_encode(file_get_contents(public_path('storage/'.$employees->photo)))}}"  style="border:5px solid #021a40;" alt="Smiley face"  width="175" height="160"></p>
+            <p style="text-align:center;"><img src="{{'data:image/png;base64,'.base64_encode(file_get_contents(public_path('storage/'.$employees->photo)))}}"  style="border:5px solid #021a40;" alt="Smiley face"  width="175" height="150"></p>
         </div>
     </div>
     <div class="row-fluid">
