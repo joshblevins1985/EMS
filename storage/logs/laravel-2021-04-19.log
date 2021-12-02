@@ -1,4 +1,0 @@
-[2021-04-19 16:38:49] production.ERROR: Cannot declare class CreateGMapsGeoCacheTable, because the name is already in use {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot declare class CreateGMapsGeoCacheTable, because the name is already in use at /Users/joshuablevins/github/peasi/database/migrations/2020_03_29_152733_create_gmaps_geocache_table.php:7)
-[stacktrace]
-#0 {main}
-"} 

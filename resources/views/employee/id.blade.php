@@ -31,7 +31,7 @@
 
     <div class="row-fluid">
         <div class="col-lg-12" style="margin-top: 15px">
-            <p style="text-align:center;"><img src="{{public_path('storage/'.$employees->photo)}}" onerror="this.src='{{public_path('storage/employee_photos/employee_photos/nouser.png')}}'" style="border:5px solid #021a40;" alt="Smiley face"  width="175" height="160"></p>
+            <p style="text-align:center;"><img src="{{URL::asset('storage/'.$employees->photo)}}"  style="border:5px solid #021a40;" alt="Smiley face"  width="175" height="160"></p>
         </div>
     </div>
     <div class="row-fluid">

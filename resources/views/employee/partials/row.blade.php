@@ -7,7 +7,7 @@
 
                 <!--Card image-->
                 <div class="view view-cascade top rounded-circle">
-                    <a href="/employee/id/{{$employee->id}}"> <img src="{{asset('storage/'.$employee->photo)}}" class="card-img-top rounded-circle"
+                    <a href="/employee/id/{{$employee->id}}"> <img src="{{URL::asset('storage/'.$employee->photo)}}" class="card-img-top rounded-circle"
                                                              onerror="{{asset('storage/employee_photos/nouser.png')}}"  alt="" style="height:300px;"> </a>
                     <a href="/employee/id/{{$employee->id}}">
                         <div class="mask rgba-white-slight"></div>
