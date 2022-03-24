@@ -239,9 +239,9 @@ class ReportController extends Controller
 
         $pdf = PDF::loadView('reports.n95qFormByStation')->setPaper('a4');;
 
-        //return $pdf->download('n95Forms.pdf');
+        return $pdf->download('n95Forms.pdf');
 
-         return view('reports.n95FormByStation', compact('stations'));
+        // return view('reports.n95FormByStation', compact('stations'));
     }
 
     public function dfwAnnual ()
@@ -253,8 +253,8 @@ class ReportController extends Controller
 
         $pdf = PDF::loadView('reports.drugFreeTrainingAnnual')->setPaper('a4');;
 
-        return $pdf->download('dfwAnnual.pdf');
+        //return $pdf->download('dfwAnnual.pdf');
 
-        //return view('reports.drugFreeTrainingAnnual', compact('companies'));
+        return view('reports.drugFreeTrainingAnnual', compact('companies'));
     }
 }
