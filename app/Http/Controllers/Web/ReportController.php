@@ -253,8 +253,8 @@ class ReportController extends Controller
 
         $pdf = PDF::loadView('reports.drugFreeTrainingAnnual')->setPaper('a4');;
 
-        return $pdf->download('dfwAnnual.pdf');
+        //return $pdf->download('dfwAnnual.pdf');
 
-        //return view('reports.drugFreeTrainingAnnual', compact('companies'));
+        return view('reports.drugFreeTrainingAnnual', compact('companies'));
     }
 }
