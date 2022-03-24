@@ -14,7 +14,7 @@
     @foreach($companies as $company)
         <div class="row">
             <div class="col-3">
-                <img src="{{ public_path('/assets/img/peasi_lg.png') }}" alt="PEASI LOGO" style="width: 100%">
+
             </div>
             <div class="col-6">
                 <h3 class="text-center">{{$company->name}}</h3>
