@@ -143,9 +143,9 @@ class ClassesController extends Controller
     	// pass view file
             $pdf = PDF::loadView('classes.certificate')->setPaper('a4')->setOption('margin-left', 5)->setOption('margin-right', 5)->setOption('margin-bottom', 20)->setOption('margin-top', 20)->setOrientation('landscape');
             // download pdf
-            return $pdf->download('coursecert.pdf');
+         //   return $pdf->download('coursecert.pdf');
             
-        //return view('classes.certificate', compact('class', 'enrolled'));
+        return view('classes.certificate', compact('class', 'enrolled'));
     }
     /**
      * Show the form for editing the specified resource.
