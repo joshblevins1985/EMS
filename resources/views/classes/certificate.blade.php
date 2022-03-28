@@ -23,10 +23,10 @@
 
             <div style=" margin-bottom: 25px">
                 <div  align="left" style="float: left; width: 25%" >
-                    <img style="width:150px; height: 150px" src="{{ public_path('/assets/img/sol.jpg') }}" class="img-fluid flex-center">
+                    <img style="width:150px; height: 150px" src="{{ asse('/assets/img/sol.jpg') }}" class="img-fluid flex-center">
                     </div>
                 <div align="center" style="float: left; text-align: center; width: 50%"> <h3>Has successfully completed  {{$class->course->hours}}  hours in {{$class->course->topic->label}} on the following topic:</h3> </div>
-                <div   style="float: right; clear: right; width: 25% " align="right" ><img style="width:150px; height: 150px" src="{{ public_path('/assets/img/sol.jpg') }}" class="img-fluid flex-center"></div>
+                <div   style="float: right; clear: right; width: 25% " align="right" ><img style="width:150px; height: 150px" src="{{ asset('/assets/img/sol.jpg') }}" class="img-fluid flex-center"></div>
             </div>
 
             <div id="header" style="clear: both">
@@ -44,11 +44,11 @@
             <div style="float: left">
                 <div style="margin-bottom: 20px">Instructor: {{$class->lead->first_name}} {{$class->lead->last_name}}</div>
                 <div style="margin-bottom: 20px">Program Director:
-                <img style="width:150px; height: 75px" src="{{ public_path('/assets/img/josh_signature.PNG') }}" class="img-fluid flex-center">
+                <img style="width:150px; height: 75px" src="{{ asset('/assets/img/josh_signature.PNG') }}" class="img-fluid flex-center">
             </div>
             </div>
             <div style="float: right">
-                <img style="width:250px; height: 150px" src="{{ public_path('/assets/img/ambulance.PNG') }}" class="img-fluid flex-center">
+                <img style="width:250px; height: 150px" src="{{ asset('/assets/img/ambulance.PNG') }}" class="img-fluid flex-center">
                 </div>
         </div>
     </body>
