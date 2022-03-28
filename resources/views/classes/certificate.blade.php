@@ -23,7 +23,7 @@
 
             <div style=" margin-bottom: 25px">
                 <div  align="left" style="float: left; width: 25%" >
-                    <img style="width:150px; height: 150px" src="{{ asse('/assets/img/sol.jpg') }}" class="img-fluid flex-center">
+                    <img style="width:150px; height: 150px" src="{{ asset('/assets/img/sol.jpg') }}" class="img-fluid flex-center">
                     </div>
                 <div align="center" style="float: left; text-align: center; width: 50%"> <h3>Has successfully completed  {{$class->course->hours}}  hours in {{$class->course->topic->label}} on the following topic:</h3> </div>
                 <div   style="float: right; clear: right; width: 25% " align="right" ><img style="width:150px; height: 150px" src="{{ asset('/assets/img/sol.jpg') }}" class="img-fluid flex-center"></div>
